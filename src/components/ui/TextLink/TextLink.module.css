@@ -1,0 +1,21 @@
+.link {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  transition: color 200ms ease-out, border-color 200ms ease-out;
+}
+
+.green {
+  color: var(--color-estate-green);
+}
+
+.cream {
+  color: var(--color-cream);
+}
+
+.link:hover {
+  color: var(--color-sage);
+}

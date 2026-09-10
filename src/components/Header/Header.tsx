@@ -26,6 +26,7 @@ export interface HeaderProps {
 export function Header({ variant = "default", bagCount }: HeaderProps) {
   const pathname = usePathname();
   const showBag = typeof bagCount === "number";
+  const isOnHero = variant === "onHero";
 
   return (
     <header
@@ -37,12 +38,17 @@ export function Header({ variant = "default", bagCount }: HeaderProps) {
 
       <nav className={styles.nav} aria-label="Primary">
         {PILLAR_LINKS.map((link) => {
+          // Embedded in the Home hero, these are in-page anchors to that
+          // same page's own sections, not routes (README.md → Home,
+          // "Nav links are in-page anchors on this page").
+          const targetHref = isOnHero ? `#${link.href.slice(1)}` : link.href;
           const isActive =
-            pathname === link.href || pathname.startsWith(`${link.href}/`);
+            !isOnHero &&
+            (pathname === link.href || pathname.startsWith(`${link.href}/`));
           return (
             <Link
               key={link.href}
-              href={link.href}
+              href={targetHref}
               className={isActive ? styles.active : undefined}
               aria-current={isActive ? "page" : undefined}
             >

@@ -1,0 +1,45 @@
+.section {
+  padding: clamp(56px, 7vw, 86px) var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.headline {
+  font-size: clamp(30px, 3.4vw, 46px);
+}
+
+.rows {
+  border-top: 1px solid var(--color-divider);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 20px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-divider);
+  transition: background-color 200ms ease-out;
+}
+
+.row:hover {
+  background-color: color-mix(in srgb, var(--color-estate-green) 4%, var(--color-page));
+}
+
+.meta {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-500);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 28px);
+  color: var(--color-estate-green);
+  grid-column: span 2;
+}
+
+.date {
+  font-size: 13px;
+  color: var(--green-500);
+}

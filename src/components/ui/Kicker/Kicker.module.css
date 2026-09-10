@@ -1,0 +1,15 @@
+.kicker {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Accessibility spec: small labels use green-500, not sage — sage at this
+   size only reaches ~3.3:1 on the cream ground. */
+.green {
+  color: var(--green-500);
+}
+
+.cream {
+  color: var(--color-cream);
+}

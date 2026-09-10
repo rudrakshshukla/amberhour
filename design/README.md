@@ -25,7 +25,7 @@ Tracking against `HANDOFF-SPEC.md` → "Suggested build order":
 
 - [x] 1. Next.js on Vercel, fonts self-hosted, tokens and shared layout
       (header, status line, footer). Static copy.
-- [ ] 2. Home page, complete, with placeholder imagery.
+- [x] 2. Home page, complete, with placeholder imagery.
 - [ ] 3. Sanity schema and Studio at `/studio`. Wire Notes and the Library
       to real content.
 - [ ] 4. Remaining pages.

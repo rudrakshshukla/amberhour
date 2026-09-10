@@ -1,0 +1,42 @@
+.section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.media {
+  width: 100%;
+}
+
+.text {
+  padding: clamp(36px, 4vw, 60px) var(--page-gutter);
+  display: grid;
+  align-content: center;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.05;
+  color: var(--color-estate-green);
+  margin-top: 18px;
+  max-width: 24ch;
+}
+
+.beliefs {
+  margin-top: 28px;
+  border-top: 1px solid var(--color-divider);
+}
+
+.belief {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--green-600);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.link {
+  margin-top: 26px;
+  justify-self: start;
+}

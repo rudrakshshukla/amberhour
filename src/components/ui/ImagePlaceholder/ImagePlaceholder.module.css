@@ -1,0 +1,25 @@
+.placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-divider);
+  padding: 24px;
+  text-align: center;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  border: 0;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-500);
+  max-width: 28ch;
+  line-height: 1.5;
+}

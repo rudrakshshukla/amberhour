@@ -1,0 +1,13 @@
+.section {
+  padding: clamp(56px, 7vw, 86px) var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.seeMethod {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-estate-green);
+  border-bottom: 1px solid var(--color-estate-green);
+  padding-bottom: 3px;
+}

@@ -10,9 +10,20 @@
 }
 
 .header.onHero {
+  /* Positioned so it paints above the hero image/scrim beneath it — both
+     absolutely positioned within the same Hero container — regardless of
+     DOM order among positioned siblings. */
+  position: relative;
+  z-index: 2;
   padding: 26px var(--page-gutter);
   border-bottom: none;
-  background: transparent;
+  /* The Hero's separate top scrim is a fixed 150px, sized for one row.
+     On a narrow screen this row wraps (by design — see README.md →
+     Shared header), and a wrapped second row can land below that fixed
+     height, over unscrimmed image. This translucent backing follows the
+     header's own (possibly wrapped) height instead, so its contents stay
+     legible against any photograph at any width. */
+  background: rgba(11, 42, 32, 0.55);
 }
 
 .logo {
@@ -99,4 +110,11 @@
 
 .onHero .cta:hover {
   background-color: color-mix(in srgb, var(--color-cream) 12%, transparent);
+}
+
+/* The global focus outline is estate-green — invisible against the hero's
+   dark scrim, so these elements get a cream one instead. */
+.onHero a:focus-visible,
+.onHero button:focus-visible {
+  outline-color: var(--color-cream);
 }

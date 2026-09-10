@@ -1,0 +1,60 @@
+.section {
+  background: var(--color-estate-green);
+  padding: clamp(56px, 7vw, 86px) var(--page-gutter);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(30px, 5vw, 60px);
+  align-items: center;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.04;
+  color: var(--color-cream);
+}
+
+.copy {
+  margin-top: 18px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-cream);
+  max-width: 38ch;
+}
+
+.fieldRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid var(--color-cream);
+  background: transparent;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: var(--color-cream);
+}
+
+.input::placeholder {
+  color: color-mix(in srgb, var(--color-cream) 70%, transparent);
+}
+
+.cta {
+  padding: 16px 26px;
+}
+
+.fine {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--color-cream);
+}
+
+/* The global focus outline is estate-green — invisible on this green
+   section, so these fields get a cream one instead. */
+.input:focus-visible,
+.cta:focus-visible {
+  outline-color: var(--color-cream);
+}

@@ -1,0 +1,53 @@
+.button {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border: 1px solid;
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    background-color 200ms ease-out,
+    color 200ms ease-out;
+}
+
+.solid.green {
+  background: var(--color-estate-green);
+  border-color: var(--color-estate-green);
+  color: var(--color-cream);
+}
+
+.solid.green:hover {
+  background-color: var(--green-600);
+}
+
+.solid.cream {
+  background: var(--color-cream);
+  border-color: var(--color-cream);
+  color: var(--color-estate-green);
+}
+
+.solid.cream:hover {
+  background-color: color-mix(in srgb, var(--color-cream) 88%, var(--color-estate-green));
+}
+
+.outline.green {
+  background: transparent;
+  border-color: var(--color-estate-green);
+  color: var(--color-estate-green);
+}
+
+.outline.green:hover {
+  background-color: color-mix(in srgb, var(--color-estate-green) 8%, transparent);
+}
+
+.outline.cream {
+  background: transparent;
+  border-color: var(--color-cream);
+  color: var(--color-cream);
+}
+
+.outline.cream:hover {
+  background-color: color-mix(in srgb, var(--color-cream) 12%, transparent);
+}

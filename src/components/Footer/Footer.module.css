@@ -78,3 +78,10 @@
 .columnLinks a:hover {
   color: var(--color-sage);
 }
+
+/* The global focus outline is estate-green — invisible on the espresso
+   footer, so these elements get a cream one instead. */
+.footer a:focus-visible,
+.footer button:focus-visible {
+  outline-color: var(--color-cream);
+}

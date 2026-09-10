@@ -5,16 +5,14 @@ import { Footer } from "@/components/Footer/Footer";
 import { siteSettings } from "@/lib/site-settings";
 
 /**
- * Shared chrome for every marketing page: standalone header, status line,
- * page content, footer.
+ * Shared chrome for every marketing page except Home: standalone header,
+ * status line, page content, footer.
  *
- * The Home page is the one exception the spec calls out — its header is
- * embedded inside the hero image rather than a standalone bar above it,
- * and its footer carries an extra "Send a note" block. Once Home is
- * built (build stage 2) it will likely move to `app/page.tsx`, outside
- * this group, and compose `<Header variant="onHero">` / `<Footer
- * variant="home">` itself. For now `/` renders through this group like
- * every other route, as a placeholder.
+ * Home (`app/page.tsx`) lives outside this group and composes its own
+ * chrome instead — its header is embedded inside the hero image rather
+ * than a standalone bar, and its status line sits below the hero. Every
+ * other route (Think/Decide/Build, Library, Notes, About, Work with me,
+ * Contact, …) renders through this layout.
  */
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
