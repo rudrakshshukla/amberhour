@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-b36455a2-c6b1-4988-a3ba-de12353744c1/styles.css">
+<script src="_ds/classical-b36455a2-c6b1-4988-a3ba-de12353744c1/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Italic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Ultralight.otf") format("opentype");font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-UltralightItalic.otf") format("opentype");font-weight:200;font-style:italic;font-display:swap}
+:root{
+  --color-bg:#F1EFEA; --color-surface:#E6E2D8; --color-text:#1B1A16;
+  --color-divider:color-mix(in srgb,#0B2A20 16%,transparent);
+  --color-accent-500:#2C6049; --color-accent-600:#12382B; --color-accent-700:#0B2A20;
+  --green:#0B2A20; --cream:#EFE9C8; --sage:#798A5C; --espresso:#3A2A22;
+  --font-heading:"PP Editorial Old",Georgia,serif;
+  --font-body:"Instrument Sans",system-ui,sans-serif;
+}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+a{color:var(--color-accent-600);text-decoration:none}
+a:hover{color:var(--sage)}
+</style>
+</helmet>
+
+<div style="display:flex;align-items:center;justify-content:space-between;padding:22px 4vw;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--color-divider)">
+  <a href="Amber%20Hour%20Home%20v2.dc.html" style="width:126px;aspect-ratio:500/154;background:var(--green);-webkit-mask:url('assets/logo-full.png') left center/contain no-repeat;mask:url('assets/logo-full.png') left center/contain no-repeat"></a>
+  <div style="display:flex;gap:24px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;flex-wrap:wrap">
+    <a href="Think.dc.html">Think</a><a href="Think.dc.html">Decide</a><a href="Think.dc.html">Build</a>
+    <a href="Library.dc.html">Library</a><a href="Notes.dc.html" style="color:var(--sage)">Notes</a>
+  </div>
+  <a href="Work-With-Me.dc.html" style="border:1px solid var(--green);color:var(--green);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px">Work with me</a>
+</div>
+
+<div data-screen-label="Notes hero" style="padding:clamp(56px,8vw,120px) 4vw clamp(36px,4vw,56px);border-bottom:1px solid var(--color-divider)">
+  <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage)">Notes</div>
+  <div style="font-family:var(--font-heading);font-weight:200;font-size:clamp(44px,7vw,96px);line-height:.98;color:var(--green);margin-top:20px;max-width:18ch">Things I've been thinking about.</div>
+  <p style="margin:26px 0 0;font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:var(--color-accent-700);max-width:46ch;text-wrap:pretty">Essays, observations and questions about building businesses, making decisions and figuring out what to do next.</p>
+</div>
+
+<div data-screen-label="Featured note" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));border-bottom:1px solid var(--color-divider)">
+  <div class="plate" style="position:relative;border:0;aspect-ratio:16/10;background:var(--color-surface)"><image-slot id="note-lead" shape="rect" placeholder="Lead image or illustration"></image-slot></div>
+  <div style="padding:clamp(34px,4vw,64px) 4vw;display:grid;align-content:center">
+    <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-variant-numeric:tabular-nums">Essay · 6 min · Aug 2026</div>
+    <div style="font-family:var(--font-heading);font-size:clamp(30px,3.8vw,52px);line-height:1.04;color:var(--green);margin-top:16px;max-width:22ch">The plan that never left the notebook</div>
+    <p style="margin:20px 0 0;font-family:var(--font-heading);font-style:italic;font-size:clamp(18px,1.8vw,24px);line-height:1.4;color:var(--color-accent-600);max-width:34ch;text-wrap:pretty">A beautifully designed plan that never leaves the notebook is, technically speaking, stationery.</p>
+    <span style="margin-top:26px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);border-bottom:1px solid var(--green);display:inline-block;padding-bottom:3px;justify-self:start">Read the note</span>
+  </div>
+</div>
+
+<div data-screen-label="Note index">
+  <div style="display:grid;grid-template-columns:minmax(140px,0.28fr) minmax(min(100%,260px),1fr) minmax(90px,0.16fr);gap:clamp(16px,2vw,32px);align-items:baseline;padding:26px 4vw;border-bottom:1px solid var(--color-divider)">
+    <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-variant-numeric:tabular-nums">Observation · 2 min</span>
+    <span style="font-family:var(--font-heading);font-size:clamp(24px,2.6vw,34px);line-height:1.15;color:var(--green)">Being busy is not a strategy</span>
+    <span style="font-size:13px;color:var(--color-accent-500);text-align:right;font-variant-numeric:tabular-nums">Jul 2026</span>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(140px,0.28fr) minmax(min(100%,260px),1fr) minmax(90px,0.16fr);gap:clamp(16px,2vw,32px);align-items:baseline;padding:26px 4vw;border-bottom:1px solid var(--color-divider)">
+    <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-variant-numeric:tabular-nums">Question · 3 min</span>
+    <span style="font-family:var(--font-heading);font-size:clamp(24px,2.6vw,34px);line-height:1.15;color:var(--green)">What are you actually deciding?</span>
+    <span style="font-size:13px;color:var(--color-accent-500);text-align:right;font-variant-numeric:tabular-nums">Jul 2026</span>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(140px,0.28fr) minmax(min(100%,260px),1fr) minmax(90px,0.16fr);gap:clamp(16px,2vw,32px);align-items:baseline;padding:26px 4vw;border-bottom:1px solid var(--color-divider)">
+    <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-variant-numeric:tabular-nums">Essay · 5 min</span>
+    <span style="font-family:var(--font-heading);font-size:clamp(24px,2.6vw,34px);line-height:1.15;color:var(--green)">On doing less, properly</span>
+    <span style="font-size:13px;color:var(--color-accent-500);text-align:right;font-variant-numeric:tabular-nums">Jun 2026</span>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(140px,0.28fr) minmax(min(100%,260px),1fr) minmax(90px,0.16fr);gap:clamp(16px,2vw,32px);align-items:baseline;padding:26px 4vw;border-bottom:1px solid var(--color-divider)">
+    <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-variant-numeric:tabular-nums">Observation · 2 min</span>
+    <span style="font-family:var(--font-heading);font-size:clamp(24px,2.6vw,34px);line-height:1.15;color:var(--green)">Tuesday will be there regardless</span>
+    <span style="font-size:13px;color:var(--color-accent-500);text-align:right;font-variant-numeric:tabular-nums">Jun 2026</span>
+  </div>
+</div>
+
+<div style="background:var(--green);padding:clamp(50px,6vw,80px) 4vw;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+  <div>
+    <div style="font-family:var(--font-heading);font-weight:200;font-size:clamp(32px,4vw,52px);line-height:1.04;color:var(--cream)">A letter, occasionally.</div>
+    <p style="margin:16px 0 0;font-size:16px;line-height:1.7;color:var(--cream);max-width:38ch">No motivational shouting. Just thoughtful things worth opening.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px;border:1px solid var(--cream);padding:16px 18px;font-size:14px;color:var(--cream)">you@yourthing.com</div>
+    <div style="border:1px solid var(--cream);background:var(--cream);color:var(--green);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:16px 26px">Join the list</div>
+  </div>
+</div>
+
+<div style="background:var(--espresso);padding:clamp(36px,4vw,52px) 4vw;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start">
+  <div style="width:170px;aspect-ratio:500/154;background:var(--cream);-webkit-mask:url('assets/logo-full.png') left center/contain no-repeat;mask:url('assets/logo-full.png') left center/contain no-repeat"></div>
+  <div style="display:flex;gap:clamp(32px,5vw,64px);flex-wrap:wrap">
+    <div>
+      <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:14px">The work</div>
+      <div style="display:grid;gap:11px;font-size:14px"><a href="Think.dc.html" style="color:var(--cream)">Think</a><a href="Think.dc.html" style="color:var(--cream)">Decide</a><a href="Think.dc.html" style="color:var(--cream)">Build</a><a href="Work-With-Me.dc.html" style="color:var(--cream)">Work with me</a></div>
+    </div>
+    <div>
+      <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:14px">Elsewhere</div>
+      <div style="display:grid;gap:11px;font-size:14px"><a href="Library.dc.html" style="color:var(--cream)">Library</a><a href="Notes.dc.html" style="color:var(--cream)">Notes</a><a href="About.dc.html" style="color:var(--cream)">About</a><a href="Contact.dc.html" style="color:var(--cream)">Contact</a></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440}}"></script>
+</body>
+</html>

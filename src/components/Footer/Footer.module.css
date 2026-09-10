@@ -1,0 +1,80 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: clamp(32px, 5vw, 64px);
+  padding: clamp(36px, 5vw, 52px) var(--page-gutter);
+  background: var(--color-espresso);
+}
+
+.brand {
+  max-width: 400px;
+}
+
+.logo {
+  display: block;
+  width: 170px;
+  aspect-ratio: 500 / 154;
+  background-color: var(--color-cream);
+  -webkit-mask: url("/assets/logo-full.png") left center / contain no-repeat;
+  mask: url("/assets/logo-full.png") left center / contain no-repeat;
+}
+
+.question {
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 200;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--color-cream);
+}
+
+.sendNote {
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid var(--color-cream);
+  color: var(--color-cream);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  transition: background-color 200ms ease-out;
+}
+
+.sendNote:hover {
+  background-color: color-mix(in srgb, var(--color-cream) 12%, transparent);
+}
+
+.columns {
+  display: flex;
+  gap: clamp(32px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+
+.column {
+  min-width: 120px;
+}
+
+.columnHeading {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  margin-bottom: 14px;
+}
+
+.columnLinks {
+  display: grid;
+  gap: 11px;
+}
+
+.columnLinks a {
+  font-size: 14px;
+  color: var(--color-cream);
+}
+
+.columnLinks a:hover {
+  color: var(--color-sage);
+}

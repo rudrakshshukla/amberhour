@@ -1,0 +1,148 @@
+
+PERSONAL BRAND WEBSITEDESIGN + CONTENT BRIEF
+For Claude — design direction, UX, visual language and implementation
+1. THE BIG IDEA
+Create a premium personal-brand website that feels like entering an intelligent studio, library or private club—not a conventional consultancy website. The brand helps independent/lifestyle builders think clearly before they build.
+Core positioning: Strategic counsel for people who want to build something of their own—but want to think it through before they build it.
+Brand promise: THINK BEFORE YOU BUILD.
+2. BRAND FEEL
+Intelligent, editorial, contemporary and quietly premium.
+Warm and human rather than corporate.
+Confident without being loud.
+Approachable, but not casual or gimmicky.
+A little irreverent: dry humour appears occasionally between serious sections.
+Modern editorial publication + private members' club + thoughtful strategist's studio.
+3. VOICE &amp; COPY RULES
+Use short paragraphs, strong headlines, generous whitespace and occasional one-line asides.
+Humour should be dry, intelligent and sparse—not comedy.
+Avoid generic consultant language: unlock, empower, transform, disrupt, scale your potential, etc.
+Avoid aggressive sales language.
+Prefer clarity over jargon.
+The writing should sometimes feel like an intelligent friend quietly making an observation.
+Serious proposition first; humour is the wink.
+Example: “A beautifully designed plan that never leaves the notebook is, technically speaking, stationery.”
+4. PRIMARY NAVIGATION
+THINK  |  DECIDE  |  BUILD  |  LIBRARY  |  NOTES  |  WORK WITH ME
+Primary CTA: START THINKING / LET'S THINK. Secondary CTA: WORK WITH ME.
+5. HOMEPAGE STRUCTURE
+HERO
+THINK BEFORE YOU BUILD.
+Strategic counsel for people who want to build something of their own—but would prefer to think it through first.
+CTA: START THINKING
+INTRO
+You don't need more noise.
+There is already plenty of it. More strategies. More hacks. More people telling you to wake up at 5am and become a different person. This brand is about slowing down enough to figure out what actually makes sense.
+THINK
+Before the answer, there is usually a better question.
+Thinking is the work before the work. Take the situation apart, separate signal from noise, and work out what you are actually dealing with.
+CTA: EXPLORE THINKING
+DECIDE
+Not every decision needs a five-year plan.
+Decisions become difficult when information starts arguing with itself. Make the decision smaller, clearer and less dramatic.
+CTA: EXPLORE DECISION TOOLS
+ASIDE
+A small interruption.
+You don't need to have your entire life figured out before Tuesday. Tuesday will be there regardless.
+BUILD
+Ideas are lovely. Useful ideas are better.
+Build the business, offer, product, system or way of working—but start with what matters.
+CTA: EXPLORE THE LIBRARY
+DISSECT
+When everything feels tangled, take it apart.
+DE-ESCALATE · ISOLATE · SPECIFY · SET URGENCY · EXAMINE INTENTION · COMPARE SOLUTIONS · TAKE ACTION
+LIBRARY
+Things worth keeping nearby.
+Practical tools for thinking, deciding and building: templates, frameworks, worksheets, prompts and decision tools.
+CTA: EXPLORE THE LIBRARY
+WORK WITH ME
+Some problems are better solved together.
+Strategic counsel for people building something of their own. Bring the messy version; that is usually the useful one.
+CTA: WORK WITH ME
+ABOUT
+I'm interested in what happens before people build.
+Focus on the thinking before the business, launch, website or decision. Avoid a conventional résumé-style About page.
+NOTES
+Things I've been thinking about.
+Essays, observations and questions about building businesses, making decisions and figuring out what to do next.
+NEWSLETTER
+A letter, occasionally.
+For people who like thinking before doing. No motivational shouting. Just thoughtful things worth opening.
+CTA: JOIN THE LIST
+CONTACT
+Have a question? Good.
+Tell me what you're thinking about, what you're trying to figure out, or what currently makes absolutely no sense.
+CTA: SEND
+6. INNER PAGE: THINK
+Headline: Before the answer, there is usually a better question.
+Problems often arrive looking simple: “I need a new business.” “I don't know what to do next.” “I have an idea.” The THINK space unpacks what is underneath.
+Content pillars: THE SITUATION · THE PROBLEM · THE INTENTION · THE OPTIONS · THE CONSEQUENCES
+CTA: EXPLORE THE THINKING LIBRARY
+7. INNER PAGE: DECIDE
+Headline: Clarity is useful. Decisions are better.
+Cover starting, changing, stopping and choosing between options. Emphasise that a decision does not have to be perfect; it has to be good enough to move forward with.
+CTA: EXPLORE DECISION TOOLS
+8. INNER PAGE: BUILD
+Headline: Ideas are lovely. Useful ideas are better.
+Building means knowing what needs to be built first. Avoid the trap of making everything impressive before the actual offer works.
+Principle: START WITH WHAT MATTERS → MAKE IT WORK → MAKE IT BETTER.
+9. LIBRARY / PRODUCTS
+Position the library as a curated collection rather than a generic shop.
+I'M STUCK — a practical reset for when something isn't working but you cannot quite explain what.
+SITUATION DECONSTRUCTION — a framework for taking a messy situation apart and seeing what is actually going on.
+Future tools: decision-making, business ideas, offers, positioning, priorities and planning.
+10. WORK WITH ME
+Headline: Some problems are better solved together.
+Offer: Strategic counsel for people building something of their own.
+Process: 01 BRING THE SITUATION → 02 DISSECT IT → 03 THINK → 04 DECIDE → 05 MOVE
+Tone line: “This isn't coaching theatre. There will be no dramatic breakthrough music. Just good questions, honest thinking and useful decisions.”
+11. ABOUT PAGE
+Do not make this a standard biography. Make it editorial and belief-led.
+You don't need to scale everything.
+Not every idea deserves a business.
+Being busy is not a strategy.
+A smaller business can be a very successful business.
+Stopping can be progress.
+Sometimes the smartest move is to do less—properly.
+12. VISUAL DIRECTION
+Use the supplied professional portrait direction as the primary photography style.
+Professional outfits: tailored trousers, crisp shirts, structured blazers, elegant business-casual looks.
+Avoid stereotypical corporate stock photography.
+Photography should feel natural, editorial and confident—not posed or overly glamorous.
+Mix polished portraits with carefully selected lifestyle images to show range.
+Do not use too many visually similar white-shirt portraits together.
+Use generous negative space so typography can breathe around photography.
+Consider large portrait crops, editorial image blocks and occasional full-bleed photography.
+13. UI / UX DIRECTION
+Minimal interface; content is the hero.
+Strong typographic hierarchy and large editorial headlines.
+Generous whitespace and calm pacing.
+Subtle motion only: slow image reveals, understated hover states, smooth transitions.
+Avoid excessive cards, gradients, animated counters, floating widgets and generic SaaS patterns.
+Navigation should remain extremely clear.
+Product/library pages should feel curated and tactile.
+Use small editorial asides or pull quotes as visual breaks.
+14. COLOUR / TYPOGRAPHY
+Start with a restrained, sophisticated palette: warm white/off-white, near-black, soft neutrals and one restrained accent. Combine a strong editorial display face with a highly readable modern sans-serif. The overall effect should feel premium, intelligent and timeless.
+15. WHAT TO AVOID
+Generic consulting website aesthetic.
+Corporate blue, generic gradients or stock-photo business imagery.
+Overuse of motivational language.
+Too many CTAs competing on one screen.
+Excessive humour.
+Trying to look like a luxury fashion brand at the expense of clarity.
+A website that feels like a template marketplace.
+Making the founder look inaccessible.
+16. DESIGN REFERENCE PRINCIPLE
+The Rochambeau Club is a reference for editorial confidence, wit, personality and the feeling of a world with its own point of view. Do NOT copy its visual identity, wording or structure. Use the principle: polished presentation + strong personality + unexpected dry humour.
+17. THE EXPERIENCE WE WANT
+A visitor should feel:
+“This person is smart.”
+“This feels different from a normal consultant website.”
+“I trust the thinking.”
+“I could actually use these tools.”
+“I like the personality.”
+“I understand what I can do next.”
+18. CORE BRAND SYSTEM
+THINK → DECIDE → BUILD → WORK WITH ME
+DISSECT — De-escalate · Isolate · Specify · Set urgency · Examine intention · Compare solutions · Take action
+Core line: THINK BEFORE YOU BUILD.

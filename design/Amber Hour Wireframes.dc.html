@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Italic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Ultralight.otf") format("opentype");font-weight:200;font-style:normal;font-display:swap}
+:root{
+  --ink:#1B1A16; --green:#0B2A20; --sage:#798A5C; --paper:#F1EFEA;
+  --wf-line:#B9B5AC; --wf-fill:#DFDBD2; --wf-mid:#CBC7BE; --wf-note:#6E6A62;
+  --sans:"Instrument Sans",system-ui,sans-serif;
+  --disp:"PP Editorial Old","Instrument Serif",Georgia,serif;
+}
+body{margin:0;background:#E7E4DD;color:var(--ink)}
+a{color:var(--green)}
+a:hover{color:var(--sage)}
+</style>
+</helmet>
+<div style="padding:56px 48px 90px;font-family:var(--sans)">
+
+  <div style="max-width:1100px;margin:0 auto 46px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--wf-note)">
+      <span>The Amber Hour</span><span>Wireframes · Stage 2 · v0.1</span>
+    </div>
+    <div style="height:1px;background:var(--wf-line);margin:14px 0 34px"></div>
+    <h1 style="font-family:var(--disp);font-weight:200;font-size:56px;line-height:1.05;margin:0;color:var(--green)">Site map &amp; wireframes</h1>
+    <p style="margin:20px 0 0;font-size:16px;line-height:1.7;max-width:64ch;text-wrap:pretty">Structure only — greys, boxes and real headlines from your brief. Nothing here is a visual decision; that happens in Stage 3. Read it for whether the flow and the order of sections are right.</p>
+    <p style="margin:14px 0 0;font-size:13.5px;line-height:1.7;max-width:64ch;color:var(--wf-note)">Hatched boxes are photography. Green rules mark a call to action. Notes in the margin flag decisions I'd like your view on.</p>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto 56px;background:var(--paper);border:1px solid var(--wf-line);padding:34px 32px">
+    <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--wf-note);margin-bottom:24px">Site map</div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+      <div style="border:1px solid var(--green);background:var(--green);color:var(--paper);padding:9px 16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase">Home</div>
+      <div style="flex:1;min-width:20px;height:1px;background:var(--wf-line)"></div>
+      <div style="font-size:11.5px;color:var(--wf-note)">One page, eight movements, three exits</div>
+    </div>
+    <div style="height:22px;width:1px;background:var(--wf-line);margin-left:44px"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,168px),1fr));gap:1px;background:var(--wf-line);border:1px solid var(--wf-line)">
+      <div style="background:#fff;padding:16px 15px">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)">Pillar</div>
+        <div style="font-family:var(--disp);font-size:20px;margin:5px 0 8px;color:var(--green)">Think</div>
+        <div style="font-size:11.5px;line-height:1.6;color:var(--wf-note)">Situation · Problem · Intention · Options · Consequences</div>
+      </div>
+      <div style="background:#fff;padding:16px 15px">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)">Pillar</div>
+        <div style="font-family:var(--disp);font-size:20px;margin:5px 0 8px;color:var(--green)">Decide</div>
+        <div style="font-size:11.5px;line-height:1.6;color:var(--wf-note)">Starting · Changing · Stopping · Choosing</div>
+      </div>
+      <div style="background:#fff;padding:16px 15px">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)">Pillar</div>
+        <div style="font-family:var(--disp);font-size:20px;margin:5px 0 8px;color:var(--green)">Build</div>
+        <div style="font-size:11.5px;line-height:1.6;color:var(--wf-note)">Start with what matters → make it work → make it better</div>
+      </div>
+      <div style="background:#fff;padding:16px 15px">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)">Collection</div>
+        <div style="font-family:var(--disp);font-size:20px;margin:5px 0 8px;color:var(--green)">Library</div>
+        <div style="font-size:11.5px;line-height:1.6;color:var(--wf-note)">Index → tool page → Stripe → delivery</div>
+      </div>
+      <div style="background:#fff;padding:16px 15px">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)">Writing</div>
+        <div style="font-family:var(--disp);font-size:20px;margin:5px 0 8px;color:var(--green)">Notes</div>
+        <div style="font-size:11.5px;line-height:1.6;color:var(--wf-note)">Index → essay</div>
+      </div>
+      <div style="background:#fff;padding:16px 15px">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)">Service</div>
+        <div style="font-family:var(--disp);font-size:20px;margin:5px 0 8px;color:var(--green)">Work with me</div>
+        <div style="font-size:11.5px;line-height:1.6;color:var(--wf-note)">Five-step process → enquiry</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:22px;margin-top:22px;flex-wrap:wrap;font-size:11.5px;color:var(--wf-note)">
+      <span>Also: About · Contact · Newsletter (a band, not a page) · Cart &amp; receipt</span>
+    </div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto 26px;display:flex;align-items:baseline;gap:16px">
+    <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--wf-note)">Page wireframes</span>
+    <span style="flex:1;height:1px;background:var(--wf-line)"></span>
+    <span style="font-size:11.5px;color:var(--wf-note)">Desktop · 1440</span>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:center;align-items:flex-start">
+
+    <div style="width:620px;flex:0 0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+        <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Home</span>
+        <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">01</span>
+      </div>
+      <div style="background:var(--paper);border:1px solid var(--wf-line)">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--wf-line);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf-note)">
+          <span style="width:74px;height:14px;background:var(--wf-mid)"></span>
+          <span style="display:flex;gap:12px"><span>Think</span><span>Decide</span><span>Build</span><span>Library</span><span>Notes</span></span>
+          <span style="border:1px solid var(--green);color:var(--green);padding:4px 9px">Work with me</span>
+        </div>
+        <div style="padding:6px 16px;border-bottom:1px solid var(--wf-line);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);display:flex;justify-content:space-between">
+          <span>Status line · currently thinking about ——</span><span>17:42 GMT</span>
+        </div>
+        <div style="padding:52px 44px 46px;border-bottom:1px solid var(--wf-line)">
+          <div style="font-family:var(--disp);font-weight:200;font-size:44px;line-height:1.04;color:var(--green)">Think before you build.</div>
+          <div style="height:9px;background:var(--wf-fill);width:88%;margin-top:20px"></div>
+          <div style="height:9px;background:var(--wf-fill);width:66%;margin-top:7px"></div>
+          <div style="display:inline-block;border:1px solid var(--green);color:var(--green);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;margin-top:26px">Start thinking</div>
+        </div>
+        <div style="padding:34px 44px;border-bottom:1px solid var(--wf-line)">
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Intro</div>
+          <div style="font-family:var(--disp);font-size:26px;line-height:1.2;color:var(--green)">You don't need more noise.</div>
+          <div style="height:8px;background:var(--wf-fill);width:100%;margin-top:16px"></div>
+          <div style="height:8px;background:var(--wf-fill);width:94%;margin-top:6px"></div>
+          <div style="height:8px;background:var(--wf-fill);width:52%;margin-top:6px"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--wf-line)">
+          <div style="padding:34px 24px 34px 44px;border-right:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Think</div>
+            <div style="font-family:var(--disp);font-size:22px;line-height:1.18;color:var(--green)">Before the answer, there is usually a better question.</div>
+            <div style="height:8px;background:var(--wf-fill);width:100%;margin-top:14px"></div>
+            <div style="height:8px;background:var(--wf-fill);width:78%;margin-top:6px"></div>
+            <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);border-bottom:1px solid var(--green);display:inline-block;margin-top:18px;padding-bottom:2px">Explore thinking</div>
+          </div>
+          <div style="background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);min-height:210px;display:grid;place-items:center">
+            <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7C786F">Portrait crop</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--wf-line)">
+          <div style="background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);min-height:200px;display:grid;place-items:center;border-right:1px solid var(--wf-line)">
+            <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7C786F">Lifestyle image</span>
+          </div>
+          <div style="padding:34px 44px 34px 24px">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Decide</div>
+            <div style="font-family:var(--disp);font-size:22px;line-height:1.18;color:var(--green)">Not every decision needs a five-year plan.</div>
+            <div style="height:8px;background:var(--wf-fill);width:100%;margin-top:14px"></div>
+            <div style="height:8px;background:var(--wf-fill);width:70%;margin-top:6px"></div>
+            <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);border-bottom:1px solid var(--green);display:inline-block;margin-top:18px;padding-bottom:2px">Explore decision tools</div>
+          </div>
+        </div>
+        <div style="padding:40px 44px;border-bottom:1px solid var(--wf-line);background:var(--green);text-align:center">
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#EFE9C8;opacity:.75;margin-bottom:12px">Aside</div>
+          <div style="font-family:var(--disp);font-style:italic;font-size:24px;line-height:1.3;color:#EFE9C8">You don't need to have your entire life figured out before Tuesday. Tuesday will be there regardless.</div>
+        </div>
+        <div style="padding:34px 44px;border-bottom:1px solid var(--wf-line)">
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Build</div>
+          <div style="font-family:var(--disp);font-size:24px;line-height:1.18;color:var(--green)">Ideas are lovely. Useful ideas are better.</div>
+          <div style="height:8px;background:var(--wf-fill);width:92%;margin-top:14px"></div>
+          <div style="height:8px;background:var(--wf-fill);width:60%;margin-top:6px"></div>
+        </div>
+        <div style="padding:34px 44px;border-bottom:1px solid var(--wf-line)">
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:14px">Dissect</div>
+          <div style="font-family:var(--disp);font-size:24px;line-height:1.18;color:var(--green);margin-bottom:18px">When everything feels tangled, take it apart.</div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--wf-line);border:1px solid var(--wf-line)">
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">De-escalate</div>
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">Isolate</div>
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">Specify</div>
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">Urgency</div>
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">Intention</div>
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">Compare</div>
+            <div style="background:#fff;padding:12px 5px;text-align:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--wf-note)">Act</div>
+          </div>
+        </div>
+        <div style="padding:34px 44px;border-bottom:1px solid var(--wf-line)">
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Library</div>
+          <div style="font-family:var(--disp);font-size:24px;line-height:1.18;color:var(--green);margin-bottom:18px">Things worth keeping nearby.</div>
+          <div style="display:flex;gap:14px">
+            <div style="flex:1;border:1px solid var(--wf-line);background:#fff">
+              <div style="height:80px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px)"></div>
+              <div style="padding:11px 12px"><div style="font-family:var(--disp);font-size:15px;color:var(--green)">I'm Stuck</div><div style="height:6px;background:var(--wf-fill);width:80%;margin-top:8px"></div></div>
+            </div>
+            <div style="flex:1;border:1px solid var(--wf-line);background:#fff">
+              <div style="height:80px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px)"></div>
+              <div style="padding:11px 12px"><div style="font-family:var(--disp);font-size:15px;color:var(--green)">Situation Deconstruction</div><div style="height:6px;background:var(--wf-fill);width:70%;margin-top:8px"></div></div>
+            </div>
+            <div style="flex:1;border:1px dashed var(--wf-line);display:grid;place-items:center;color:var(--wf-note);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:8px">More<br>soon</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.1fr 1fr;border-bottom:1px solid var(--wf-line)">
+          <div style="padding:34px 24px 34px 44px;border-right:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Work with me</div>
+            <div style="font-family:var(--disp);font-size:22px;line-height:1.18;color:var(--green)">Some problems are better solved together.</div>
+            <div style="height:8px;background:var(--wf-fill);width:100%;margin-top:14px"></div>
+            <div style="height:8px;background:var(--wf-fill);width:64%;margin-top:6px"></div>
+            <div style="display:inline-block;border:1px solid var(--green);color:var(--green);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;margin-top:18px">Work with me</div>
+          </div>
+          <div style="background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);min-height:180px;display:grid;place-items:center">
+            <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7C786F">Portrait</span>
+          </div>
+        </div>
+        <div style="padding:34px 44px;border-bottom:1px solid var(--wf-line)">
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Notes</div>
+          <div style="font-family:var(--disp);font-size:22px;line-height:1.18;color:var(--green);margin-bottom:16px">Things I've been thinking about.</div>
+          <div style="display:grid;gap:1px;background:var(--wf-line);border-top:1px solid var(--wf-line);border-bottom:1px solid var(--wf-line)">
+            <div style="background:var(--paper);padding:12px 0;display:flex;gap:14px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">01</span><span style="height:8px;background:var(--wf-fill);flex:1;max-width:60%"></span></div>
+            <div style="background:var(--paper);padding:12px 0;display:flex;gap:14px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">02</span><span style="height:8px;background:var(--wf-fill);flex:1;max-width:48%"></span></div>
+            <div style="background:var(--paper);padding:12px 0;display:flex;gap:14px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">03</span><span style="height:8px;background:var(--wf-fill);flex:1;max-width:66%"></span></div>
+          </div>
+        </div>
+        <div style="padding:40px 44px;text-align:center;border-bottom:1px solid var(--wf-line)">
+          <div style="font-family:var(--disp);font-style:italic;font-size:24px;color:var(--green)">A letter, occasionally.</div>
+          <div style="display:flex;gap:0;max-width:340px;margin:20px auto 0">
+            <div style="flex:1;border:1px solid var(--wf-line);background:#fff;height:38px"></div>
+            <div style="border:1px solid var(--green);background:var(--green);color:#EFE9C8;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:0 16px;display:grid;place-items:center">Join</div>
+          </div>
+        </div>
+        <div style="padding:30px 44px;background:var(--green);display:flex;justify-content:space-between;gap:20px">
+          <div style="width:120px;height:34px;background:#EFE9C8;opacity:.5"></div>
+          <div style="display:flex;gap:30px">
+            <div style="display:grid;gap:7px"><span style="height:6px;width:56px;background:#EFE9C8;opacity:.55"></span><span style="height:6px;width:44px;background:#EFE9C8;opacity:.35"></span><span style="height:6px;width:50px;background:#EFE9C8;opacity:.35"></span></div>
+            <div style="display:grid;gap:7px"><span style="height:6px;width:56px;background:#EFE9C8;opacity:.55"></span><span style="height:6px;width:40px;background:#EFE9C8;opacity:.35"></span><span style="height:6px;width:48px;background:#EFE9C8;opacity:.35"></span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">
+        Eight movements is long for a home page. My instinct is to cut DISSECT down to a single line with a link, since it repeats on the Think page. Say the word and I'll drop it.
+      </div>
+    </div>
+
+    <div style="width:400px;flex:0 0 auto;display:grid;gap:40px">
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Think · Decide · Build</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">02</span>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line)">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px;gap:10px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span><span style="flex:1"></span><span style="width:80px;height:9px;background:var(--wf-fill)"></span></div>
+          <div style="padding:38px 32px 30px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Pillar 01</div>
+            <div style="font-family:var(--disp);font-weight:200;font-size:32px;line-height:1.08;color:var(--green)">Before the answer, there is usually a better question.</div>
+            <div style="height:8px;background:var(--wf-fill);width:100%;margin-top:18px"></div>
+            <div style="height:8px;background:var(--wf-fill);width:74%;margin-top:6px"></div>
+          </div>
+          <div style="background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);height:150px;display:grid;place-items:center;border-bottom:1px solid var(--wf-line)">
+            <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7C786F">Full-bleed image</span>
+          </div>
+          <div style="padding:30px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:14px">Content pillars</div>
+            <div style="display:grid;gap:1px;background:var(--wf-line);border:1px solid var(--wf-line)">
+              <div style="background:#fff;padding:14px 14px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">01</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">The situation</span></div>
+              <div style="background:#fff;padding:14px 14px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">02</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">The problem</span></div>
+              <div style="background:#fff;padding:14px 14px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">03</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">The intention</span></div>
+              <div style="background:#fff;padding:14px 14px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">04</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">The options</span></div>
+              <div style="background:#fff;padding:14px 14px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">05</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">The consequences</span></div>
+            </div>
+          </div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line);text-align:center">
+            <div style="font-family:var(--disp);font-style:italic;font-size:17px;line-height:1.35;color:var(--green)">Pull quote — the dry aside sits here</div>
+          </div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Tools for this</div>
+            <div style="display:flex;gap:12px">
+              <div style="flex:1;border:1px solid var(--wf-line);background:#fff;height:74px"></div>
+              <div style="flex:1;border:1px solid var(--wf-line);background:#fff;height:74px"></div>
+            </div>
+          </div>
+          <div style="padding:26px 32px;text-align:center">
+            <div style="display:inline-block;border:1px solid var(--green);color:var(--green);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px">Explore the library</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">One template serves all three pillars — only the pillar list and the tools change. Cheaper to build and it makes the trio feel like a set.</div>
+      </div>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Library index</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">03</span>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line)">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px;gap:10px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span><span style="flex:1"></span><span style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf-note)">Bag (0)</span></div>
+          <div style="padding:34px 32px 26px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-family:var(--disp);font-weight:200;font-size:30px;line-height:1.08;color:var(--green)">Things worth keeping nearby.</div>
+            <div style="height:8px;background:var(--wf-fill);width:88%;margin-top:16px"></div>
+          </div>
+          <div style="padding:14px 32px;border-bottom:1px solid var(--wf-line);display:flex;gap:9px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf-note)">
+            <span style="border:1px solid var(--green);color:var(--green);padding:5px 10px">All</span>
+            <span style="border:1px solid var(--wf-line);padding:5px 10px">Think</span>
+            <span style="border:1px solid var(--wf-line);padding:5px 10px">Decide</span>
+            <span style="border:1px solid var(--wf-line);padding:5px 10px">Build</span>
+          </div>
+          <div style="display:grid;gap:1px;background:var(--wf-line)">
+            <div style="background:var(--paper);padding:20px 32px;display:flex;gap:16px;align-items:flex-start">
+              <div style="width:76px;height:56px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);flex:0 0 auto"></div>
+              <div style="flex:1">
+                <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">01 · Think</div>
+                <div style="font-family:var(--disp);font-size:19px;color:var(--green);margin-top:4px">I'm Stuck</div>
+                <div style="height:7px;background:var(--wf-fill);width:92%;margin-top:9px"></div>
+              </div>
+              <div style="font-family:var(--disp);font-size:15px;color:var(--green)">£00</div>
+            </div>
+            <div style="background:var(--paper);padding:20px 32px;display:flex;gap:16px;align-items:flex-start">
+              <div style="width:76px;height:56px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);flex:0 0 auto"></div>
+              <div style="flex:1">
+                <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">02 · Think</div>
+                <div style="font-family:var(--disp);font-size:19px;color:var(--green);margin-top:4px">Situation Deconstruction</div>
+                <div style="height:7px;background:var(--wf-fill);width:84%;margin-top:9px"></div>
+              </div>
+              <div style="font-family:var(--disp);font-size:15px;color:var(--green)">£00</div>
+            </div>
+            <div style="background:var(--paper);padding:20px 32px;display:flex;gap:16px;align-items:center;opacity:.6">
+              <div style="width:76px;height:56px;border:1px dashed var(--wf-line);flex:0 0 auto"></div>
+              <div style="flex:1">
+                <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">03 · Decide</div>
+                <div style="font-family:var(--disp);font-size:19px;color:var(--green);margin-top:4px">Placeholder</div>
+              </div>
+              <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf-note)">Soon</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">A numbered list, not a card grid — your brief rules out marketplace feel. Placeholders sit inline as "soon" rather than being hidden, which makes the collection look intentional while it's small.</div>
+      </div>
+
+    </div>
+
+    <div style="width:400px;flex:0 0 auto;display:grid;gap:40px">
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Tool page</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">04</span>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line)">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--wf-line)">
+            <div style="background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);min-height:190px;border-right:1px solid var(--wf-line);display:grid;place-items:center"><span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7C786F">Cover</span></div>
+            <div style="padding:24px 22px">
+              <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">01 · Think</div>
+              <div style="font-family:var(--disp);font-size:26px;line-height:1.1;color:var(--green);margin-top:6px">I'm Stuck</div>
+              <div style="height:7px;background:var(--wf-fill);width:100%;margin-top:12px"></div>
+              <div style="height:7px;background:var(--wf-fill);width:78%;margin-top:5px"></div>
+              <div style="font-family:var(--disp);font-size:20px;color:var(--green);margin-top:16px">£00</div>
+              <div style="border:1px solid var(--green);background:var(--green);color:#EFE9C8;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:9px 0;text-align:center;margin-top:12px">Add to bag</div>
+              <div style="font-size:9px;color:var(--wf-note);margin-top:8px;text-align:center">Instant download · Stripe</div>
+            </div>
+          </div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">What it is</div>
+            <div style="height:8px;background:var(--wf-fill);width:100%"></div>
+            <div style="height:8px;background:var(--wf-fill);width:96%;margin-top:6px"></div>
+            <div style="height:8px;background:var(--wf-fill);width:58%;margin-top:6px"></div>
+          </div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">What's inside</div>
+            <div style="display:grid;gap:1px;background:var(--wf-line);border:1px solid var(--wf-line)">
+              <div style="background:#fff;padding:11px 12px;height:11px"></div>
+              <div style="background:#fff;padding:11px 12px;height:11px"></div>
+              <div style="background:#fff;padding:11px 12px;height:11px"></div>
+            </div>
+          </div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Look inside</div>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1;height:64px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px)"></div>
+              <div style="flex:1;height:64px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px)"></div>
+              <div style="flex:1;height:64px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px)"></div>
+            </div>
+          </div>
+          <div style="padding:24px 32px">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Also in the library</div>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1;border:1px solid var(--wf-line);background:#fff;height:60px"></div>
+              <div style="flex:1;border:1px solid var(--wf-line);background:#fff;height:60px"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">"Look inside" needs real page shots to work. If a tool can't show its insides, buyers hesitate.</div>
+      </div>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Work with me</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">05</span>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line)">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span></div>
+          <div style="padding:34px 32px 26px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-family:var(--disp);font-weight:200;font-size:30px;line-height:1.08;color:var(--green)">Some problems are better solved together.</div>
+            <div style="height:8px;background:var(--wf-fill);width:92%;margin-top:16px"></div>
+          </div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:14px">The process</div>
+            <div style="display:grid;gap:1px;background:var(--wf-line);border:1px solid var(--wf-line)">
+              <div style="background:#fff;padding:13px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">01</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">Bring the situation</span></div>
+              <div style="background:#fff;padding:13px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">02</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">Dissect it</span></div>
+              <div style="background:#fff;padding:13px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">03</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">Think</span></div>
+              <div style="background:#fff;padding:13px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">04</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">Decide</span></div>
+              <div style="background:#fff;padding:13px;display:flex;gap:12px;align-items:baseline"><span style="font-size:9.5px;color:var(--sage);font-variant-numeric:tabular-nums">05</span><span style="font-family:var(--disp);font-size:16px;color:var(--green)">Move</span></div>
+            </div>
+          </div>
+          <div style="padding:28px 32px;border-bottom:1px solid var(--wf-line);background:var(--green)">
+            <div style="font-family:var(--disp);font-style:italic;font-size:17px;line-height:1.4;color:#EFE9C8">This isn't coaching theatre. There will be no dramatic breakthrough music.</div>
+          </div>
+          <div style="padding:26px 32px">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Enquiry</div>
+            <div style="display:grid;gap:9px">
+              <div style="border:1px solid var(--wf-line);background:#fff;height:32px"></div>
+              <div style="border:1px solid var(--wf-line);background:#fff;height:32px"></div>
+              <div style="border:1px solid var(--wf-line);background:#fff;height:74px"></div>
+              <div style="border:1px solid var(--green);background:var(--green);color:#EFE9C8;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:9px 0;text-align:center">Send</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">No price on this page yet. If counsel has a fee, saying it filters enquiries; if it varies, a range still helps.</div>
+      </div>
+
+    </div>
+
+    <div style="width:400px;flex:0 0 auto;display:grid;gap:40px">
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">About</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">06</span>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line)">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span></div>
+          <div style="padding:34px 32px 26px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-family:var(--disp);font-weight:200;font-size:30px;line-height:1.08;color:var(--green)">I'm interested in what happens before people build.</div>
+          </div>
+          <div style="background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px);height:200px;display:grid;place-items:center;border-bottom:1px solid var(--wf-line)"><span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7C786F">Large portrait crop</span></div>
+          <div style="padding:26px 32px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:16px">Beliefs</div>
+            <div style="display:grid;gap:14px">
+              <div style="font-family:var(--disp);font-size:18px;line-height:1.25;color:var(--green);padding-bottom:12px;border-bottom:1px solid var(--wf-line)">You don't need to scale everything.</div>
+              <div style="font-family:var(--disp);font-size:18px;line-height:1.25;color:var(--green);padding-bottom:12px;border-bottom:1px solid var(--wf-line)">Not every idea deserves a business.</div>
+              <div style="font-family:var(--disp);font-size:18px;line-height:1.25;color:var(--green);padding-bottom:12px;border-bottom:1px solid var(--wf-line)">Being busy is not a strategy.</div>
+              <div style="font-family:var(--disp);font-size:18px;line-height:1.25;color:var(--green);padding-bottom:12px;border-bottom:1px solid var(--wf-line)">Stopping can be progress.</div>
+              <div style="font-family:var(--disp);font-size:18px;line-height:1.25;color:var(--green)">Sometimes the smartest move is to do less — properly.</div>
+            </div>
+          </div>
+          <div style="padding:26px 32px;text-align:center">
+            <div style="display:inline-block;border:1px solid var(--green);color:var(--green);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px">Work with me</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">Beliefs as a list of statements, no supporting paragraphs — your brief said belief-led, not biography. If you want any history at all it goes as a short footnote under the portrait.</div>
+      </div>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Notes &amp; Contact</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">07</span>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line);margin-bottom:22px">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span></div>
+          <div style="padding:30px 32px 20px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-family:var(--disp);font-weight:200;font-size:28px;line-height:1.08;color:var(--green)">Things I've been thinking about.</div>
+          </div>
+          <div style="display:grid;gap:1px;background:var(--wf-line)">
+            <div style="background:var(--paper);padding:18px 32px">
+              <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">Essay · 6 min</div>
+              <div style="height:9px;background:var(--wf-fill);width:78%;margin-top:9px"></div>
+              <div style="height:7px;background:var(--wf-fill);width:94%;margin-top:8px"></div>
+            </div>
+            <div style="background:var(--paper);padding:18px 32px">
+              <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">Observation · 2 min</div>
+              <div style="height:9px;background:var(--wf-fill);width:62%;margin-top:9px"></div>
+              <div style="height:7px;background:var(--wf-fill);width:88%;margin-top:8px"></div>
+            </div>
+            <div style="background:var(--paper);padding:18px 32px">
+              <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">Question · 3 min</div>
+              <div style="height:9px;background:var(--wf-fill);width:70%;margin-top:9px"></div>
+              <div style="height:7px;background:var(--wf-fill);width:80%;margin-top:8px"></div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--paper);border:1px solid var(--wf-line)">
+          <div style="height:34px;border-bottom:1px solid var(--wf-line);display:flex;align-items:center;padding:0 14px"><span style="width:56px;height:11px;background:var(--wf-mid)"></span></div>
+          <div style="padding:30px 32px 22px;border-bottom:1px solid var(--wf-line)">
+            <div style="font-family:var(--disp);font-weight:200;font-size:28px;line-height:1.08;color:var(--green)">Have a question? Good.</div>
+            <div style="height:8px;background:var(--wf-fill);width:90%;margin-top:14px"></div>
+            <div style="height:8px;background:var(--wf-fill);width:64%;margin-top:6px"></div>
+          </div>
+          <div style="padding:24px 32px">
+            <div style="display:grid;gap:9px">
+              <div style="border:1px solid var(--wf-line);background:#fff;height:32px"></div>
+              <div style="border:1px solid var(--wf-line);background:#fff;height:32px"></div>
+              <div style="border:1px solid var(--wf-line);background:#fff;height:88px"></div>
+              <div style="border:1px solid var(--green);background:var(--green);color:#EFE9C8;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:9px 0;text-align:center">Send</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">Notes carries a kind label — Essay, Observation, Question — so short pieces don't look like unfinished ones.</div>
+      </div>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <span style="font-family:var(--disp);font-size:23px;color:var(--green)">Bag &amp; receipt</span>
+          <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-note)">08</span>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:1;background:var(--paper);border:1px solid var(--wf-line)">
+            <div style="padding:16px 18px;border-bottom:1px solid var(--wf-line);display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf-note)"><span>Your bag</span><span>Close</span></div>
+            <div style="padding:20px 18px;border-bottom:1px solid var(--wf-line);display:flex;gap:12px">
+              <div style="width:44px;height:34px;background:repeating-linear-gradient(45deg,#D6D2C9 0 6px,#CBC7BE 6px 12px)"></div>
+              <div style="flex:1"><div style="font-family:var(--disp);font-size:15px;color:var(--green)">I'm Stuck</div><div style="height:6px;background:var(--wf-fill);width:60%;margin-top:7px"></div></div>
+              <div style="font-family:var(--disp);font-size:13px;color:var(--green)">£00</div>
+            </div>
+            <div style="padding:16px 18px">
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--wf-note)"><span>Total</span><span style="font-family:var(--disp);font-size:15px;color:var(--green)">£00</span></div>
+              <div style="border:1px solid var(--green);background:var(--green);color:#EFE9C8;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:9px 0;text-align:center;margin-top:14px">Checkout</div>
+            </div>
+          </div>
+          <div style="flex:1;background:var(--paper);border:1px solid var(--wf-line);padding:24px 18px;display:grid;align-content:center;text-align:center;gap:12px">
+            <div style="font-family:var(--disp);font-style:italic;font-size:17px;line-height:1.35;color:var(--green)">Nothing in the bag. Not necessarily a problem.</div>
+            <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);border-bottom:1px solid var(--green);justify-self:center;padding-bottom:2px">Browse the library</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;border-left:2px solid var(--sage);padding:8px 0 8px 14px;font-size:12.5px;line-height:1.65;color:var(--wf-note)">Bag slides in from the right; buying never leaves the page until Stripe. Empty state is where the dry humour earns its place.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="max-width:1100px;margin:64px auto 0;border-top:1px solid var(--wf-line);padding-top:30px">
+    <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--wf-note);margin-bottom:16px">Before Stage 3</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:26px;font-size:13.5px;line-height:1.7">
+      <p style="margin:0">Photography is the gap. The brief leans on editorial portraits and lifestyle images, and the hi-fi home page will look half-built without at least one strong portrait.</p>
+      <p style="margin:0">Home page length — happy to cut DISSECT to a line, or keep the full eight movements.</p>
+      <p style="margin:0">The status line. You asked for something other than a clock. My suggestion: a rotating line of what you're currently thinking about, which you update occasionally.</p>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>

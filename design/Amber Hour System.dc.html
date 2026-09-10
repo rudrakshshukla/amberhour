@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-b36455a2-c6b1-4988-a3ba-de12353744c1/styles.css">
+<script src="_ds/classical-b36455a2-c6b1-4988-a3ba-de12353744c1/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Italic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-Ultralight.otf") format("opentype");font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Editorial Old";src:url("fonts/PPEditorialOld-UltralightItalic.otf") format("opentype");font-weight:200;font-style:italic;font-display:swap}
+:root{
+  --color-bg:#F1EFEA; --color-surface:#E6E2D8; --color-text:#1B1A16;
+  --color-accent:#0B2A20; --color-accent-2:#798A5C;
+  --color-divider:color-mix(in srgb,#0B2A20 18%,transparent);
+  --color-accent-100:#E9EFEB; --color-accent-200:#CFDAD3; --color-accent-300:#9BB0A5;
+  --color-accent-400:#567F6B; --color-accent-500:#2C6049; --color-accent-600:#12382B;
+  --color-accent-700:#0B2A20; --color-accent-800:#082018; --color-accent-900:#061A13;
+  --ah-green:#0B2A20; --ah-cream:#EFE9C8; --ah-sage:#798A5C; --ah-espresso:#3A2A22;
+  --font-heading:"PP Editorial Old",Georgia,serif; --font-body:"Instrument Sans",system-ui,sans-serif;
+  --font-heading-weight:400;
+}
+body{margin:0;background:var(--color-bg);color:var(--color-text)}
+a{color:var(--color-accent-600)}
+a:hover{color:var(--ah-sage)}
+</style>
+</helmet>
+<div style="max-width:1180px;margin:0 auto;padding:64px 40px 96px;font-family:var(--font-body)">
+
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">
+    <span>The Amber Hour · Think before you build</span><span>Foundation · Stage 1 · v0.2</span>
+  </div>
+  <div style="height:1px;background:var(--color-divider);margin:14px 0 56px"></div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:end">
+    <div>
+      <div style="width:100%;max-width:430px;aspect-ratio:500/154;background:var(--ah-green);-webkit-mask:url('assets/logo-full.png') left center/contain no-repeat;mask:url('assets/logo-full.png') left center/contain no-repeat"></div>
+      <p style="margin:22px 0 0;font-size:16px;line-height:1.7;max-width:46ch;text-wrap:pretty">The design system for the website, drawn from your brand guideline and your content brief. Everything in Stages 2–6 is assembled from the parts on this page.</p>
+      <div style="font-family:var(--font-heading);font-weight:200;font-size:27px;line-height:1.15;color:var(--ah-green);margin-top:26px">Think before you build.</div>
+    </div>
+    <div style="border:1px solid var(--color-divider);padding:26px 28px;background:#fff">
+      <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-500);margin-bottom:14px">Assumptions I made</div>
+      <ol style="margin:0;padding-left:20px;font-size:13.5px;line-height:1.75">
+        <li>Editorial-studio voice from your brief: a quiet magazine about thinking, not a template marketplace.</li>
+        <li>The Library is a curated collection; counsel sits above it. Placeholders stand in until the tools exist.</li>
+        <li>Your brief asks for warm off-white, near-black and one restrained accent — green is that accent, and also the ink. Cream reverses on green; espresso holds photographic warmth.</li>
+        <li>PP Editorial Old (Ultralight, Regular, Italics) is loaded from your files, and the marks are your real logo artwork, masked so each lockup can take green or cream.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div style="height:1px;background:var(--color-divider);margin:64px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">01</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">Marks</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+      <span style="font-size:12px;color:var(--color-accent-500)">Four lockups, one for each context</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <figure style="border:1px solid var(--color-divider);background:#fff;padding:0;margin:0">
+        <div style="height:150px;display:grid;place-items:center;padding:0 26px">
+          <div style="width:100%;aspect-ratio:500/154;background:var(--ah-green);-webkit-mask:url('assets/logo-full.png') center/contain no-repeat;mask:url('assets/logo-full.png') center/contain no-repeat"></div>
+        </div>
+        <figcaption style="border-top:1px solid var(--color-divider);padding:9px 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Primary · site header, footer</figcaption>
+      </figure>
+      <figure style="border:1px solid var(--color-divider);background:#fff;margin:0">
+        <div style="height:150px;display:grid;place-items:center;padding:0 26px">
+          <div style="width:118px;aspect-ratio:143/67;background:var(--ah-green);-webkit-mask:url('assets/logo-short.png') center/contain no-repeat;mask:url('assets/logo-short.png') center/contain no-repeat"></div>
+        </div>
+        <figcaption style="border-top:1px solid var(--color-divider);padding:9px 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Short · sticky nav, favicon, invoices</figcaption>
+      </figure>
+      <figure style="border:1px dashed color-mix(in srgb,var(--ah-green) 34%,transparent);background:#fff;margin:0">
+        <div style="height:150px;display:grid;place-items:center;padding:0 22px;text-align:center">
+          <div>
+            <div style="font-family:var(--font-heading);font-style:italic;font-size:19px;line-height:1.3;color:var(--color-accent-500)">Stacked lockup wanted</div>
+            <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ah-sage);margin-top:8px">Transparent SVG or PNG</div>
+          </div>
+        </div>
+        <figcaption style="border-top:1px dashed color-mix(in srgb,var(--ah-green) 34%,transparent);padding:9px 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Alternate · stacked, narrow &amp; mobile</figcaption>
+      </figure>
+      <figure style="border:1px solid var(--color-divider);background:var(--ah-green);margin:0">
+        <div style="height:150px;display:grid;place-items:center;padding:0 26px">
+          <div style="width:118px;aspect-ratio:143/67;background:var(--ah-cream);-webkit-mask:url('assets/logo-short.png') center/contain no-repeat;mask:url('assets/logo-short.png') center/contain no-repeat"></div>
+        </div>
+        <figcaption style="border-top:1px solid color-mix(in srgb,var(--ah-cream) 25%,transparent);padding:9px 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ah-cream)">Reversed · avatar, seal, dark sections</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div style="height:1px;background:var(--color-divider);margin:56px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">02</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">Colour</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+      <span style="font-size:12px;color:var(--color-accent-500)">Colour is stroke and ground, never a decorative fill</span>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:16px">
+      <div style="border:1px solid var(--color-divider)">
+        <div style="height:190px;background:var(--ah-green)"></div>
+        <div style="padding:12px 14px;background:#fff">
+          <div style="font-family:var(--font-heading);font-size:19px;color:var(--ah-green)">Estate Green</div>
+          <div style="font-size:11.5px;color:var(--color-accent-500);font-variant-numeric:tabular-nums">#0B2A20 · ink, rules, dark sections</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider)">
+        <div style="height:190px;background:var(--ah-cream)"></div>
+        <div style="padding:12px 14px;background:#fff">
+          <div style="font-family:var(--font-heading);font-size:19px;color:var(--ah-green)">Cream</div>
+          <div style="font-size:11.5px;color:var(--color-accent-500);font-variant-numeric:tabular-nums">#EFE9C8 · type on green</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider)">
+        <div style="height:190px;background:var(--ah-sage)"></div>
+        <div style="padding:12px 14px;background:#fff">
+          <div style="font-family:var(--font-heading);font-size:19px;color:var(--ah-green)">Sage</div>
+          <div style="font-size:11.5px;color:var(--color-accent-500);font-variant-numeric:tabular-nums">#798A5C · rules, large type</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider)">
+        <div style="height:190px;background:var(--ah-espresso)"></div>
+        <div style="padding:12px 14px;background:#fff">
+          <div style="font-family:var(--font-heading);font-size:19px;color:var(--ah-green)">Espresso</div>
+          <div style="font-size:11.5px;color:var(--color-accent-500);font-variant-numeric:tabular-nums">#3A2A22 · photo warmth</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;margin-top:16px;border:1px solid var(--color-divider)">
+      <div style="flex:1;height:44px;background:var(--color-accent-100)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-200)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-300)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-400)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-500)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-600)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-700)"></div>
+      <div style="flex:1;height:44px;background:var(--color-accent-900)"></div>
+    </div>
+    <p style="margin:10px 0 0;font-size:12px;color:var(--color-accent-500)">Green ramp 100 → 900. Steps 100–200 for tinted hovers and table stripes, 500 for small labels and meta, 700 for the ink itself. Sage stays on rules and larger type — at 10.5px it only reaches 3.3:1 on the cream ground, so labels take accent-500 instead.</p>
+  </section>
+
+  <div style="height:1px;background:var(--color-divider);margin:56px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">03</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">Type</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+      <span style="font-size:12px;color:var(--color-accent-500)">PP Editorial Old over Instrument Sans · the bigger it sets, the lighter it goes</span>
+    </div>
+    <div style="display:grid;gap:0;border-top:1px solid var(--color-divider)">
+      <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--color-divider);align-items:baseline">
+        <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Display 64 · ultralight</div>
+        <div style="font-family:var(--font-heading);font-weight:200;font-size:64px;line-height:1.02;color:var(--ah-green)">Counsel, then craft</div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--color-divider);align-items:baseline">
+        <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Heading 34</div>
+        <div style="font-family:var(--font-heading);font-size:34px;line-height:1.12;color:var(--ah-green)">Before the answer, there is usually a better question</div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--color-divider);align-items:baseline">
+        <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Subhead 21 italic</div>
+        <div style="font-family:var(--font-heading);font-style:italic;font-size:22px;line-height:1.35;color:var(--color-accent-600)">A beautifully designed plan that never leaves the notebook is, technically speaking, stationery.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--color-divider)">
+        <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Body 15.5</div>
+        <p style="margin:0;font-size:16px;line-height:1.72;max-width:60ch;text-wrap:pretty">Body copy sets in the sans at a comfortable measure, ranged left, in short paragraphs. Hairline rules carry the structure between sections. The display face never appears at paragraph size, and the sans never appears at display size.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--color-divider);align-items:baseline">
+        <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-500)">Label 10.5</div>
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">Library · Tool 01 · Think</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="height:1px;background:var(--color-divider);margin:56px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">04</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">Components</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+      <span style="font-size:12px;color:var(--color-accent-500)">Outlined, unfilled, hairline-bordered</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px">
+
+      <div style="border:1px solid var(--color-divider);background:#fff;padding:24px">
+        <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-500);margin-bottom:18px">Actions</div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <button class="btn btn-primary">Start thinking</button>
+          <button class="btn btn-secondary">Work with me</button>
+          <button class="btn btn-ghost">Explore the library</button>
+          <button class="btn btn-primary" disabled="disabled">Coming soon</button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:22px">
+          <span class="tag tag-accent">Think</span>
+          <span class="tag tag-neutral">Decide</span>
+          <span class="tag tag-outline">Build</span>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--color-divider);background:#fff;padding:24px">
+        <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-500);margin-bottom:18px">Fields</div>
+        <div class="field" style="margin-bottom:16px">
+          <label for="ah-mail">Email</label>
+          <input class="input" id="ah-mail" type="email" placeholder="you@house.com">
+        </div>
+        <div class="seg" style="margin-bottom:16px">
+          <label class="seg-opt"><input type="radio" name="ah-seg" checked="checked">Library</label>
+          <label class="seg-opt"><input type="radio" name="ah-seg">Notes</label>
+        </div>
+        <button class="btn btn-primary btn-block">Join the list</button>
+      </div>
+
+      <div style="border:1px solid var(--color-divider);background:#fff;padding:0;display:flex;flex-direction:column">
+        <div style="padding:24px 24px 0;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-500)">Template card</div>
+        <div style="padding:18px 24px 0">
+          <div class="plate" style="height:150px;position:relative"><image-slot id="ah-tpl-1" shape="rect" placeholder="Template cover"></image-slot></div>
+        </div>
+        <div style="padding:16px 24px 24px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div style="font-family:var(--font-heading);font-size:23px;line-height:1.15;color:var(--ah-green)">I'm Stuck</div>
+            <div style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-600);font-variant-numeric:tabular-nums">£00</div>
+          </div>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-500);margin-top:8px;font-variant-numeric:tabular-nums">42 pages · Notion &amp; Figma</div>
+          <p style="margin:12px 0 0;font-size:14px;line-height:1.65;color:var(--color-accent-700)">A practical reset for when something isn't working but you can't quite explain what.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--color-divider);background:#fff;margin-top:22px;padding:24px">
+      <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-500);margin-bottom:16px">Library index · the collection reads as a list, not a grid of cards</div>
+      <table class="table" style="width:100%">
+        <thead><tr><th style="width:44px">No.</th><th>Tool</th><th>For</th><th style="text-align:right">Price</th></tr></thead>
+        <tbody>
+          <tr><td style="font-variant-numeric:tabular-nums">01</td><td>I'm Stuck</td><td>Think</td><td style="text-align:right;font-variant-numeric:tabular-nums">£00</td></tr>
+          <tr><td style="font-variant-numeric:tabular-nums">02</td><td>Situation Deconstruction</td><td>Think</td><td style="text-align:right;font-variant-numeric:tabular-nums">£00</td></tr>
+          <tr><td style="font-variant-numeric:tabular-nums">03</td><td>Placeholder · decision tool</td><td>Decide</td><td style="text-align:right;font-variant-numeric:tabular-nums">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div style="height:1px;background:var(--color-divider);margin:56px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">05</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">Pattern &amp; plates</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+      <span style="font-size:12px;color:var(--color-accent-500)">Drop your own photographs onto the plates</span>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px">
+      <div style="background:var(--ah-green);padding:14px">
+        <div style="border:1px solid color-mix(in srgb,var(--ah-cream) 55%,transparent);padding:8px;height:100%;box-sizing:border-box">
+          <div style="border:1px solid color-mix(in srgb,var(--ah-cream) 40%,transparent);height:100%;box-sizing:border-box;display:grid;place-items:center;padding:52px 32px;text-align:center">
+            <div style="width:100%;max-width:300px">
+              <div style="width:100%;aspect-ratio:500/154;background:var(--ah-cream);-webkit-mask:url('assets/logo-full.png') center/contain no-repeat;mask:url('assets/logo-full.png') center/contain no-repeat"></div>
+              <div style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ah-cream);margin-top:22px">Brand pattern · section dividers, covers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;gap:22px">
+        <div class="plate" style="height:100%;min-height:150px;position:relative"><image-slot id="ah-plate-1" shape="rect" placeholder="Interior photograph"></image-slot></div>
+        <div class="plate" style="height:100%;min-height:150px;position:relative"><image-slot id="ah-plate-2" shape="rect" placeholder="Detail / still life"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <div style="height:1px;background:var(--color-divider);margin:56px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">06</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">Core brand system</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+      <span style="font-size:12px;color:var(--color-accent-500)">The spine of the navigation and the site</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:1px;background:var(--color-divider);border:1px solid var(--color-divider)">
+      <div style="background:#fff;padding:26px 22px">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">01</div>
+        <div style="font-family:var(--font-heading);font-size:26px;margin:6px 0 8px;color:var(--ah-green)">Think</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.65;color:var(--color-accent-700)">The work before the work.</p>
+      </div>
+      <div style="background:#fff;padding:26px 22px">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">02</div>
+        <div style="font-family:var(--font-heading);font-size:26px;margin:6px 0 8px;color:var(--ah-green)">Decide</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.65;color:var(--color-accent-700)">Smaller, clearer, less dramatic.</p>
+      </div>
+      <div style="background:#fff;padding:26px 22px">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">03</div>
+        <div style="font-family:var(--font-heading);font-size:26px;margin:6px 0 8px;color:var(--ah-green)">Build</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.65;color:var(--color-accent-700)">Start with what matters.</p>
+      </div>
+      <div style="background:var(--ah-green);padding:26px 22px">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ah-cream);font-variant-numeric:tabular-nums">04</div>
+        <div style="font-family:var(--font-heading);font-size:26px;margin:6px 0 8px;color:var(--ah-cream)">Work with me</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.65;color:var(--ah-cream)">Bring the messy version.</p>
+      </div>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-top:0;background:#fff;padding:24px 22px">
+      <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+        <span style="font-family:var(--font-heading);font-size:24px;color:var(--ah-green);letter-spacing:.08em">DISSECT</span>
+        <span style="font-family:var(--font-heading);font-style:italic;font-size:16px;color:var(--color-accent-500)">when everything feels tangled, take it apart</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px">
+        <span class="tag tag-outline">De-escalate</span>
+        <span class="tag tag-outline">Isolate</span>
+        <span class="tag tag-outline">Specify</span>
+        <span class="tag tag-outline">Set urgency</span>
+        <span class="tag tag-outline">Examine intention</span>
+        <span class="tag tag-outline">Compare solutions</span>
+        <span class="tag tag-outline">Take action</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="height:1px;background:var(--color-divider);margin:56px 0 0"></div>
+
+  <section style="padding-top:44px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:26px">
+      <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">07</span>
+      <h2 style="margin:0;font-size:30px;color:var(--ah-green)">What we build, when</h2>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--color-divider);border-top:1px solid var(--color-divider)">
+      <div style="padding:20px 22px 22px;background:var(--color-bg)">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">Stage 1 · done</div>
+        <div style="font-family:var(--font-heading);font-size:22px;margin:8px 0 6px;color:var(--ah-green)">Foundation</div>
+        <p style="margin:0;font-size:13px;line-height:1.7;color:var(--color-accent-700)">This page. Marks, colour, type, components, imagery, and the THINK · DECIDE · BUILD spine.</p>
+      </div>
+      <div style="padding:20px 22px;background:var(--color-bg)">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">Stage 2 · next</div>
+        <div style="font-family:var(--font-heading);font-size:22px;margin:8px 0 6px;color:var(--ah-green)">Site map &amp; wireframes</div>
+        <p style="margin:0;font-size:13px;line-height:1.7;color:var(--color-accent-700)">Home, the three pillar pages, Library, Notes, Work With Me, About, Contact — in low fidelity.</p>
+      </div>
+      <div style="padding:20px 22px;background:var(--color-bg)">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">Stage 3</div>
+        <div style="font-family:var(--font-heading);font-size:22px;margin:8px 0 6px;color:var(--ah-green)">Home, three directions</div>
+        <p style="margin:0;font-size:13px;line-height:1.7;color:var(--color-accent-700)">You pick one; I unify the rest of the site to it.</p>
+      </div>
+      <div style="padding:20px 22px 22px;background:var(--color-bg)">
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-500);font-variant-numeric:tabular-nums">Stages 4–6</div>
+        <div style="font-family:var(--font-heading);font-size:22px;margin:8px 0 6px;color:var(--ah-green)">Shop, detail, handoff</div>
+        <p style="margin:0;font-size:13px;line-height:1.7;color:var(--color-accent-700)">Library and tool detail with Stripe checkout, then remaining pages, mobile and states, then a build package.</p>
+      </div>
+    </div>
+    <p style="margin:34px 0 0;font-size:13px;line-height:1.7;color:var(--color-accent-500);max-width:74ch">Outstanding: photography. Your brief leans on editorial portraits and lifestyle images, and until they arrive every image sits as a matted placeholder. Library tools are placeholders too, per your note.</p>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>

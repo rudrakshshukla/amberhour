@@ -1,0 +1,146 @@
+/* ==========================================================================
+   The Amber Hour — design tokens
+   Source of truth: design_handoff_amber_hour/README.md → "Design tokens".
+   Every value below is taken verbatim from that spec.
+   ========================================================================== */
+
+:root {
+  /* Colour */
+  --color-estate-green: #0b2a20;
+  --color-cream: #efe9c8;
+  --color-sage: #798a5c;
+  --color-espresso: #3a2a22;
+  --color-page: #f1efea;
+  --color-surface: #e6e2d8;
+  --color-ink: #1b1a16;
+  --color-divider: color-mix(in srgb, #0b2a20 16%, transparent);
+
+  /* Green ramp, 100 → 900. 700 is Estate green. */
+  --green-100: #e9efeb;
+  --green-200: #cfdad3;
+  --green-300: #9bb0a5;
+  --green-400: #567f6b;
+  --green-500: #2c6049;
+  --green-600: #12382b;
+  --green-700: #0b2a20;
+  --green-800: #082018;
+  --green-900: #061a13;
+
+  /* Type */
+  --font-display: "PP Editorial Old", Georgia, serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+
+  /* Structure */
+  --page-gutter: 4vw;
+  --section-padding: clamp(46px, 6vw, 90px);
+  --hero-padding: clamp(56px, 8vw, 120px);
+  --grid-gap: clamp(24px, 4vw, 60px);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-page);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Tabular numerals on every number, price, date and kicker — apply this
+   class rather than repeating the declaration everywhere. */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus — visible on every interactive element, never removed. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-estate-green);
+  outline-offset: 2px;
+}
+
+/* Skip link — hidden until focused, per the accessibility spec. */
+.skip-link {
+  position: absolute;
+  left: 4vw;
+  top: -100px;
+  z-index: 100;
+  background: var(--color-cream);
+  color: var(--color-estate-green);
+  padding: 12px 20px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: top 200ms ease-out;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

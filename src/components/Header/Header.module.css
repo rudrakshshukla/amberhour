@@ -1,0 +1,102 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 22px var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+  background: var(--color-page);
+}
+
+.header.onHero {
+  padding: 26px var(--page-gutter);
+  border-bottom: none;
+  background: transparent;
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 126px;
+  aspect-ratio: 500 / 154;
+  background-color: var(--color-estate-green);
+  -webkit-mask: url("/assets/logo-full.png") left center / contain no-repeat;
+  mask: url("/assets/logo-full.png") left center / contain no-repeat;
+}
+
+.onHero .logo {
+  width: 132px;
+  background-color: var(--color-cream);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-estate-green);
+}
+
+.onHero .nav a {
+  color: var(--color-cream);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--color-sage);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bag {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-estate-green);
+  border: 0;
+  border-bottom: 1px solid var(--color-estate-green);
+  padding: 0 0 2px;
+}
+
+.onHero .bag {
+  color: var(--color-cream);
+  border-bottom-color: var(--color-cream);
+}
+
+.bag:hover {
+  color: var(--color-sage);
+  border-bottom-color: var(--color-sage);
+}
+
+.cta {
+  border: 1px solid var(--color-estate-green);
+  color: var(--color-estate-green);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  transition: background-color 200ms ease-out;
+}
+
+.cta:hover {
+  background-color: color-mix(in srgb, var(--color-estate-green) 8%, transparent);
+}
+
+.onHero .cta {
+  border-color: var(--color-cream);
+  color: var(--color-cream);
+}
+
+.onHero .cta:hover {
+  background-color: color-mix(in srgb, var(--color-cream) 12%, transparent);
+}

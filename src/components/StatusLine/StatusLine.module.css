@@ -1,0 +1,15 @@
+.statusLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 9px var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+  background: var(--color-surface);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  /* Accessibility spec: small labels use green-500, not sage — sage at
+     this size only reaches ~3.3:1 on the cream ground. */
+  color: var(--green-500);
+}
