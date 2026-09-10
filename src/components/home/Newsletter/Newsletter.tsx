@@ -1,17 +1,23 @@
 import { Button } from "@/components/ui/Button/Button";
-import { siteSettings } from "@/lib/site-settings";
+import { fallbackSiteSettings } from "@/lib/site-settings";
 import styles from "./Newsletter.module.css";
 
+export interface NewsletterProps {
+  /** siteSettings.newsletterBlurb, resolved by the caller (avoids every page section re-fetching it). */
+  blurb?: string;
+}
+
 /**
- * Static for now — build stage 8 wires this to the newsletter module
- * (`lib/newsletter.ts`) once a platform is chosen (README.md → Email).
+ * Form submission is static for now — build stage 8 wires this to the
+ * newsletter module (`lib/newsletter.ts`) once a platform is chosen
+ * (README.md → Email).
  */
-export function Newsletter() {
+export function Newsletter({ blurb = fallbackSiteSettings.newsletterBlurb }: NewsletterProps) {
   return (
     <section className={styles.section}>
       <div>
         <h2 className={styles.headline}>A letter, occasionally.</h2>
-        <p className={styles.copy}>{siteSettings.newsletterBlurb}</p>
+        <p className={styles.copy}>{blurb}</p>
       </div>
       <form className={styles.form}>
         <div className={styles.fieldRow}>

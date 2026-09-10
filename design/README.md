@@ -26,8 +26,9 @@ Tracking against `HANDOFF-SPEC.md` → "Suggested build order":
 - [x] 1. Next.js on Vercel, fonts self-hosted, tokens and shared layout
       (header, status line, footer). Static copy.
 - [x] 2. Home page, complete, with placeholder imagery.
-- [ ] 3. Sanity schema and Studio at `/studio`. Wire Notes and the Library
-      to real content.
+- [x] 3. Sanity schema and Studio at `/studio`. Wire Notes and the Library
+      to real content. **See `SANITY-SETUP.md`** for the one-time setup
+      the owner needs to do.
 - [ ] 4. Remaining pages.
 - [ ] 5. Stripe: multi-currency price model, bag, checkout, Stripe Tax,
       webhook, signed download links, receipt page, emails. GBP only.

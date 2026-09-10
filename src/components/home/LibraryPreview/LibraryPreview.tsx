@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SectionHead } from "@/components/ui/SectionHead/SectionHead";
 import { TextLink } from "@/components/ui/TextLink/TextLink";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder/ImagePlaceholder";
-import { PLACEHOLDER_TOOLS } from "@/lib/placeholder-content";
+import { getHomeTools } from "@/sanity/lib/queries";
 import styles from "./LibraryPreview.module.css";
 
-export function LibraryPreview() {
+export async function LibraryPreview() {
+  const tools = await getHomeTools();
+
   return (
     <section id="library" className={styles.section}>
       <SectionHead
@@ -14,17 +17,31 @@ export function LibraryPreview() {
         action={<TextLink href="/library">All tools</TextLink>}
       />
       <div className={styles.grid}>
-        {PLACEHOLDER_TOOLS.map((tool) => (
+        {tools.map((tool) => (
           <Link key={tool.slug} href={`/library/${tool.slug}`} className={styles.card}>
-            <ImagePlaceholder label="Tool cover" height="220px" className={styles.cover} />
+            {tool.coverImageUrl ? (
+              <div className={styles.cover}>
+                <Image
+                  src={tool.coverImageUrl}
+                  alt={tool.coverImageAlt ?? ""}
+                  fill
+                  sizes="(max-width: 700px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            ) : (
+              <ImagePlaceholder label="Tool cover" height="220px" className={styles.cover} />
+            )}
             <div className={styles.cardBody}>
               <div className={`${styles.cardKicker} tabular-nums`}>
-                {tool.number} · {tool.pillar}
+                {String(tool.number).padStart(2, "0")} · {tool.pillar}
               </div>
               <h3 className={styles.cardTitle}>{tool.title}</h3>
               <p className={styles.cardSummary}>{tool.summary}</p>
               <div className={styles.cardFooter}>
-                <span className={`${styles.price} tabular-nums`}>£00</span>
+                <span className={`${styles.price} tabular-nums`}>
+                  {tool.priceGBP !== undefined ? `£${tool.priceGBP}` : "£00"}
+                </span>
                 <span className={styles.view}>View</span>
               </div>
             </div>

@@ -12,7 +12,7 @@ import { WorkWithMePreview } from "@/components/home/WorkWithMePreview/WorkWithM
 import { NotesPreview } from "@/components/home/NotesPreview/NotesPreview";
 import { Newsletter } from "@/components/home/Newsletter/Newsletter";
 import { Footer } from "@/components/Footer/Footer";
-import { siteSettings } from "@/lib/site-settings";
+import { resolveSiteSettings } from "@/lib/get-site-settings";
 
 export const metadata: Metadata = {
   description:
@@ -25,7 +25,9 @@ export const metadata: Metadata = {
  * below the hero rather than below a standalone header, so it composes
  * its own chrome instead of using the shared layout (README.md → Home).
  */
-export default function HomePage() {
+export default async function HomePage() {
+  const siteSettings = await resolveSiteSettings();
+
   return (
     <>
       <a href="#main" className="skip-link">
@@ -85,7 +87,7 @@ export default function HomePage() {
 
         <NotesPreview />
 
-        <Newsletter />
+        <Newsletter blurb={siteSettings.newsletterBlurb} />
       </main>
 
       <Footer variant="home" />

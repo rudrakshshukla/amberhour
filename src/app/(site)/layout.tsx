@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/Header/Header";
 import { StatusLine } from "@/components/StatusLine/StatusLine";
 import { Footer } from "@/components/Footer/Footer";
-import { siteSettings } from "@/lib/site-settings";
+import { resolveSiteSettings } from "@/lib/get-site-settings";
 
 /**
  * Shared chrome for every marketing page except Home: standalone header,
@@ -14,7 +14,9 @@ import { siteSettings } from "@/lib/site-settings";
  * other route (Think/Decide/Build, Library, Notes, About, Work with me,
  * Contact, …) renders through this layout.
  */
-export default function SiteLayout({ children }: { children: ReactNode }) {
+export default async function SiteLayout({ children }: { children: ReactNode }) {
+  const siteSettings = await resolveSiteSettings();
+
   return (
     <>
       <a href="#main" className="skip-link">
