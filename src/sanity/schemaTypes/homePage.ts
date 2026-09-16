@@ -1,4 +1,5 @@
 import { defineField, defineType } from "@sanity/types";
+import { initialValueFor } from "../defaults";
 
 /**
  * Singleton: every headline, paragraph, list and image on the Home page.
@@ -60,6 +61,8 @@ export const homePage = defineType({
   name: "homePage",
   title: "Home page",
   type: "document",
+  // A new Home page opens with the design copy already filled in.
+  initialValue: () => initialValueFor("homePage"),
   groups: [
     { name: "hero", title: "Hero", default: true },
     { name: "premise", title: "Intro" },

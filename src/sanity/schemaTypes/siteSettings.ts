@@ -1,10 +1,12 @@
 import { defineField, defineType } from "@sanity/types";
+import { initialValueFor } from "../defaults";
 
 /** Singleton — see src/sanity/structure.ts for how it's pinned in the Studio. */
 export const siteSettings = defineType({
   name: "siteSettings",
   title: "Site settings",
   type: "document",
+  initialValue: () => initialValueFor("siteSettings"),
   fields: [
     defineField({
       name: "statusLine",
