@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { Kicker } from "@/components/ui/Kicker/Kicker";
 import { TextLink } from "@/components/ui/TextLink/TextLink";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder/ImagePlaceholder";
+import { CmsImage } from "@/components/ui/CmsImage/CmsImage";
+import type { CmsImage as CmsImageData } from "@/lib/home-content";
 import styles from "./PillarBlock.module.css";
 
 export interface PillarBlockProps {
@@ -12,7 +13,9 @@ export interface PillarBlockProps {
   body?: string;
   linkLabel: string;
   linkHref: string;
+  /** Placeholder caption, shown until an image is uploaded. */
   imageLabel: string;
+  image?: CmsImageData;
   imageSide: "left" | "right";
   imageMinHeight?: string;
   /** Build's three-step arrow line. */
@@ -28,12 +31,19 @@ export function PillarBlock({
   linkLabel,
   linkHref,
   imageLabel,
+  image: imageData,
   imageSide,
   imageMinHeight = "min(58vh, 520px)",
   extra,
 }: PillarBlockProps) {
   const image = (
-    <ImagePlaceholder label={imageLabel} minHeight={imageMinHeight} className={styles.image} />
+    <CmsImage
+      image={imageData}
+      label={imageLabel}
+      minHeight={imageMinHeight}
+      sizes="(max-width: 800px) 100vw, 50vw"
+      className={styles.image}
+    />
   );
   const text = (
     <div className={styles.text}>

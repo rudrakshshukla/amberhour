@@ -1,13 +1,11 @@
+import type { HomeContent } from "@/lib/home-content";
 import styles from "./Premise.module.css";
 
-export function Premise() {
+export function Premise({ content }: { content: HomeContent["premise"] }) {
   return (
     <section className={styles.section}>
-      <h2 className={styles.headline}>You don&apos;t need more noise.</h2>
-      <p className={styles.copy}>
-        There is already plenty of it. This brand is about slowing down
-        enough to figure out what actually makes sense.
-      </p>
+      <h2 className={styles.headline}>{content.headline}</h2>
+      <p className={styles.copy}>{content.copy}</p>
     </section>
   );
 }

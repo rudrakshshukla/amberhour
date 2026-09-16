@@ -4,17 +4,18 @@ import { SectionHead } from "@/components/ui/SectionHead/SectionHead";
 import { TextLink } from "@/components/ui/TextLink/TextLink";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder/ImagePlaceholder";
 import { getHomeTools } from "@/sanity/lib/queries";
+import type { HomeContent } from "@/lib/home-content";
 import styles from "./LibraryPreview.module.css";
 
-export async function LibraryPreview() {
+export async function LibraryPreview({ content }: { content: HomeContent["library"] }) {
   const tools = await getHomeTools();
 
   return (
     <section id="library" className={styles.section}>
       <SectionHead
-        kicker="The library"
-        headline="Things worth keeping nearby."
-        action={<TextLink href="/library">All tools</TextLink>}
+        kicker={content.kicker}
+        headline={content.headline}
+        action={<TextLink href="/library">{content.linkLabel}</TextLink>}
       />
       <div className={styles.grid}>
         {tools.map((tool) => (
@@ -48,9 +49,9 @@ export async function LibraryPreview() {
           </Link>
         ))}
         <div className={styles.placeholderCard}>
-          <div className={styles.placeholderText}>More tools are being written.</div>
+          <div className={styles.placeholderText}>{content.moreText}</div>
           <Link href="/contact" className={styles.placeholderLink}>
-            Tell me what you need
+            {content.moreLinkLabel}
           </Link>
         </div>
       </div>

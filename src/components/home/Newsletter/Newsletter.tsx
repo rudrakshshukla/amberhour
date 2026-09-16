@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/Button/Button";
 import { fallbackSiteSettings } from "@/lib/site-settings";
+import { fallbackHomeContent, type HomeContent } from "@/lib/home-content";
 import styles from "./Newsletter.module.css";
 
 export interface NewsletterProps {
   /** siteSettings.newsletterBlurb, resolved by the caller (avoids every page section re-fetching it). */
   blurb?: string;
+  content?: HomeContent["newsletter"];
 }
 
 /**
@@ -12,11 +14,14 @@ export interface NewsletterProps {
  * newsletter module (`lib/newsletter.ts`) once a platform is chosen
  * (README.md → Email).
  */
-export function Newsletter({ blurb = fallbackSiteSettings.newsletterBlurb }: NewsletterProps) {
+export function Newsletter({
+  blurb = fallbackSiteSettings.newsletterBlurb,
+  content = fallbackHomeContent.newsletter,
+}: NewsletterProps) {
   return (
     <section className={styles.section}>
       <div>
-        <h2 className={styles.headline}>A letter, occasionally.</h2>
+        <h2 className={styles.headline}>{content.headline}</h2>
         <p className={styles.copy}>{blurb}</p>
       </div>
       <form className={styles.form}>
@@ -30,10 +35,10 @@ export function Newsletter({ blurb = fallbackSiteSettings.newsletterBlurb }: New
             className={styles.input}
           />
           <Button type="submit" tone="cream" className={styles.cta}>
-            Join the list
+            {content.ctaLabel}
           </Button>
         </div>
-        <p className={styles.fine}>No schedule. No sequence. Unsubscribe whenever.</p>
+        <p className={styles.fine}>{content.finePrint}</p>
       </form>
     </section>
   );

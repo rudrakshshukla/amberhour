@@ -13,6 +13,7 @@ import { NotesPreview } from "@/components/home/NotesPreview/NotesPreview";
 import { Newsletter } from "@/components/home/Newsletter/Newsletter";
 import { Footer } from "@/components/Footer/Footer";
 import { resolveSiteSettings } from "@/lib/get-site-settings";
+import { resolveHomeContent } from "@/lib/get-home-content";
 
 export const metadata: Metadata = {
   description:
@@ -24,9 +25,15 @@ export const metadata: Metadata = {
  * the hero image rather than a standalone bar, and its status line sits
  * below the hero rather than below a standalone header, so it composes
  * its own chrome instead of using the shared layout (README.md → Home).
+ *
+ * All copy and imagery comes from the `homePage` singleton in Sanity,
+ * falling back to the design copy for any field left blank.
  */
 export default async function HomePage() {
-  const siteSettings = await resolveSiteSettings();
+  const [siteSettings, home] = await Promise.all([
+    resolveSiteSettings(),
+    resolveHomeContent(),
+  ]);
 
   return (
     <>
@@ -34,60 +41,63 @@ export default async function HomePage() {
         Skip to content
       </a>
 
-      <Hero />
+      <Hero content={home.hero} />
 
       <StatusLine statusLine={siteSettings.statusLine} issueLabel={siteSettings.issueLabel} />
 
       <main id="main">
-        <Premise />
+        <Premise content={home.premise} />
 
         <PillarBlock
           id="think"
-          kicker="01 · Think"
-          headline="Before the answer, there is usually a better question."
-          body="Thinking is the work before the work."
-          linkLabel="Explore thinking"
+          kicker={home.think.kicker}
+          headline={home.think.headline}
+          body={home.think.body}
+          linkLabel={home.think.linkLabel}
           linkHref="/think"
+          image={home.think.image}
           imageLabel="Witty illustration or image — Think"
           imageSide="left"
         />
 
         <PillarBlock
           id="decide"
-          kicker="02 · Decide"
-          headline="Not every decision needs a five-year plan."
-          body="Make the decision smaller, clearer and less dramatic."
-          linkLabel="Explore decision tools"
+          kicker={home.decide.kicker}
+          headline={home.decide.headline}
+          body={home.decide.body}
+          linkLabel={home.decide.linkLabel}
           linkHref="/decide"
+          image={home.decide.image}
           imageLabel="Witty illustration or image — Decide"
           imageSide="right"
         />
 
-        <Interruption />
+        <Interruption content={home.interruption} />
 
         <PillarBlock
           id="build"
-          kicker="03 · Build"
-          headline="Ideas are lovely. Useful ideas are better."
+          kicker={home.build.kicker}
+          headline={home.build.headline}
           imageMinHeight="min(56vh, 500px)"
-          linkLabel="Explore the library"
+          linkLabel={home.build.linkLabel}
           linkHref="/library"
+          image={home.build.image}
           imageLabel="Witty illustration or image — Build"
           imageSide="left"
-          extra={<BuildSteps />}
+          extra={<BuildSteps steps={home.build.steps} />}
         />
 
-        <Dissect />
+        <Dissect content={home.dissect} />
 
-        <LibraryPreview />
+        <LibraryPreview content={home.library} />
 
-        <AboutPreview />
+        <AboutPreview content={home.about} />
 
-        <WorkWithMePreview />
+        <WorkWithMePreview content={home.workWithMe} />
 
-        <NotesPreview />
+        <NotesPreview content={home.notes} />
 
-        <Newsletter blurb={siteSettings.newsletterBlurb} />
+        <Newsletter blurb={siteSettings.newsletterBlurb} content={home.newsletter} />
       </main>
 
       <Footer variant="home" />

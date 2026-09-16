@@ -1,14 +1,12 @@
 import { Kicker } from "@/components/ui/Kicker/Kicker";
+import type { HomeContent } from "@/lib/home-content";
 import styles from "./Interruption.module.css";
 
-export function Interruption() {
+export function Interruption({ content }: { content: HomeContent["interruption"] }) {
   return (
     <section className={styles.section}>
-      <Kicker tone="cream">A small interruption</Kicker>
-      <p className={styles.line}>
-        You don&apos;t need to have your entire life figured out before
-        Tuesday. Tuesday will be there regardless.
-      </p>
+      <Kicker tone="cream">{content.kicker}</Kicker>
+      <p className={styles.line}>{content.line}</p>
     </section>
   );
 }

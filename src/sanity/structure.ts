@@ -1,19 +1,23 @@
 import type { StructureResolver } from "sanity/structure";
 
-/**
- * Pins `siteSettings` as a single editable document (no "create new", no
- * list of many) at the top, above the regular content-type lists.
- */
+/** One-of-a-kind documents: pinned at the top, never listed or created as many. */
+export const SINGLETONS = [
+  { type: "homePage", title: "Home page" },
+  { type: "siteSettings", title: "Site settings" },
+] as const;
+
+export const SINGLETON_TYPES = new Set<string>(SINGLETONS.map((s) => s.type));
+
 export const structure: StructureResolver = (S) =>
   S.list()
     .title("Content")
     .items([
-      S.listItem()
-        .title("Site settings")
-        .id("siteSettings")
-        .child(S.document().schemaType("siteSettings").documentId("siteSettings")),
-      S.divider(),
-      ...S.documentTypeListItems().filter(
-        (item) => item.getId() !== "siteSettings"
+      ...SINGLETONS.map(({ type, title }) =>
+        S.listItem()
+          .title(title)
+          .id(type)
+          .child(S.document().schemaType(type).documentId(type).title(title))
       ),
+      S.divider(),
+      ...S.documentTypeListItems().filter((item) => !SINGLETON_TYPES.has(item.getId() ?? "")),
     ]);

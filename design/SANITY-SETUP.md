@@ -61,7 +61,9 @@ seconds, with no redeploy.
 Once Vercel has redeployed with those variables, go to
 **yoursite.com/studio** and log in with your Sanity account. You'll see
 plain labelled fields for essays ("Note"), tools, bundles, currencies,
-and one "Site settings" entry for the status line — fill in whatever you
+a "Home page" entry (every headline, paragraph, list and photo on the
+home page — anything left blank keeps the design's wording), and one
+"Site settings" entry for the status line — fill in whatever you
 like, hit Publish, and it appears on the live site.
 
 ## If something looks wrong

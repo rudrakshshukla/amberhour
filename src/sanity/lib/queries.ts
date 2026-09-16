@@ -121,3 +121,21 @@ export async function getHomeTools(): Promise<HomeTool[]> {
     coverImageAlt: coverImage?.alt,
   }));
 }
+
+// ---------------------------------------------------------------------------
+// Home page (singleton) — every editable headline, paragraph, list and image.
+// Merged over the design copy in lib/get-home-content.ts.
+// ---------------------------------------------------------------------------
+
+/** Raw document: sections of optional strings, string arrays and image objects. */
+export type HomePageDoc = Record<string, Record<string, unknown> | null | undefined>;
+
+const homePageQuery = groq`*[_id == "homePage"][0]`;
+
+export function getHomePage() {
+  return sanityFetch<HomePageDoc | null>({
+    query: homePageQuery,
+    tags: [SANITY_TAGS.homePage],
+    fallback: null,
+  });
+}

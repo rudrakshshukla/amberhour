@@ -5,6 +5,7 @@ export const SANITY_TAGS = {
   bundle: "sanity:bundle",
   currency: "sanity:currency",
   siteSettings: "sanity:siteSettings",
+  homePage: "sanity:homePage",
 } as const;
 
 export type SanityDocType = keyof typeof SANITY_TAGS;

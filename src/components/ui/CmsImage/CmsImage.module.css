@@ -1,0 +1,10 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+}

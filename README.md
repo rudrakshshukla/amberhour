@@ -49,12 +49,12 @@ src/
     api/webhooks/sanity/    revalidation webhook Sanity calls on publish
   components/
     Header/, StatusLine/, Footer/   shared chrome components
-    ui/                    reusable atoms (Button, TextLink, Kicker, SectionHead, CellGrid, ImagePlaceholder)
+    ui/                    reusable atoms (Button, TextLink, Kicker, SectionHead, CellGrid, ImagePlaceholder, CmsImage)
     home/                  Home page sections (Hero, PillarBlock, Dissect, LibraryPreview, …)
   sanity/
     env.ts                 project id/dataset/api version from env vars
-    schemaTypes/            note, tool, bundle, currency, siteSettings + shared objects
-    structure.ts             Studio desk structure (pins siteSettings as a singleton)
+    schemaTypes/            note, tool, bundle, currency, siteSettings, homePage + shared objects
+    structure.ts             Studio desk structure (pins homePage + siteSettings as singletons)
     lib/
       client.ts, fetch.ts    lazy Sanity client + unstable_cache/revalidateTag wrapper
       queries.ts              typed GROQ queries used by the Home page
@@ -64,6 +64,8 @@ src/
     nav.ts                  shared nav link data
     site-settings.ts         siteSettings shape + fallback values
     get-site-settings.ts      resolves real Sanity data over the fallback
+    home-content.ts           Home page content shape + the design copy used as fallback
+    get-home-content.ts       merges the homePage singleton over that fallback
 public/
   assets/                  logo files (masked with CSS, see Header/Footer)
 ```

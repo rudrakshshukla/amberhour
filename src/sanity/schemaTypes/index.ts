@@ -5,6 +5,7 @@ import { tool } from "./tool";
 import { bundle } from "./bundle";
 import { currency } from "./currency";
 import { siteSettings } from "./siteSettings";
+import { homePage } from "./homePage";
 
 export const schemaTypes = [
   // Documents
@@ -13,6 +14,7 @@ export const schemaTypes = [
   bundle,
   currency,
   siteSettings,
+  homePage,
   // Objects
   price,
   pullQuote,
