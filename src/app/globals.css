@@ -26,10 +26,6 @@
   --green-800: #082018;
   --green-900: #061a13;
 
-  /* Type */
-  --font-display: "PP Editorial Old", Georgia, serif;
-  --font-body: "Instrument Sans", system-ui, sans-serif;
-
   /* Structure */
   --page-gutter: 4vw;
   --section-padding: clamp(46px, 6vw, 90px);

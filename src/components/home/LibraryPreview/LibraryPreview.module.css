@@ -39,6 +39,7 @@
 }
 
 .cardTitle {
+  font-weight: 400;
   font-family: var(--font-display);
   font-size: 28px;
   line-height: 1.12;

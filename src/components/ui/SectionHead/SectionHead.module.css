@@ -8,6 +8,7 @@
 }
 
 .headline {
+  font-weight: 200;
   font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 54px);
   line-height: 1.04;
