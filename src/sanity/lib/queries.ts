@@ -139,3 +139,64 @@ export function getHomePage() {
     fallback: null,
   });
 }
+
+// ---------------------------------------------------------------------------
+// Tools — the Library index (every tool, any status).
+// ---------------------------------------------------------------------------
+
+export interface LibraryTool {
+  slug: string;
+  number: number;
+  pillar: "Think" | "Decide" | "Build";
+  title: string;
+  summary: string;
+  coverImageUrl?: string;
+  coverImageAlt?: string;
+  /** undefined until the owner sets a GBP price — render "£00" (README.md → Fidelity). */
+  priceGBP?: number;
+  status: "Available" | "In progress";
+}
+
+interface RawLibraryTool {
+  slug: string;
+  number: number;
+  pillar: "Think" | "Decide" | "Build";
+  title: string;
+  summary: string;
+  coverImage?: SanityImageSource & { alt?: string };
+  priceGBP?: number;
+  status: "Available" | "In progress";
+}
+
+const libraryToolsQuery = groq`
+  *[_type == "tool" && defined(slug.current)] | order(number asc) {
+    "slug": slug.current,
+    number,
+    pillar,
+    title,
+    summary,
+    coverImage,
+    "priceGBP": prices[currency->code == "GBP"][0].amount,
+    status
+  }
+`;
+
+/**
+ * Every tool, any status — the Library index (README.md → "Library index
+ * — /library"). In-progress tools render greyed with "Soon" and no link.
+ * Bundles ("Bundles appear in this index alongside tools…") are wired in
+ * build stage 7 with the rest of the bundle flow, not here.
+ */
+export async function getLibraryTools(): Promise<LibraryTool[]> {
+  const tools = await sanityFetch<RawLibraryTool[]>({
+    query: libraryToolsQuery,
+    tags: [SANITY_TAGS.tool, SANITY_TAGS.currency],
+    fallback: [],
+  });
+
+  return tools.map(({ coverImage, ...tool }) => ({
+    ...tool,
+    coverImageUrl: urlForImage(coverImage)?.width(680).height(510).fit("crop").url(),
+    coverImageAlt: coverImage?.alt,
+  }));
+}

@@ -1,0 +1,35 @@
+.filters {
+  padding: 18px var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--color-surface);
+}
+
+.chip,
+.chipActive {
+  font: inherit;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+.chip {
+  border: 1px solid var(--color-divider);
+  background: transparent;
+  color: var(--color-estate-green);
+}
+
+.chip:hover {
+  background-color: color-mix(in srgb, var(--color-estate-green) 8%, transparent);
+}
+
+.chipActive {
+  border: 1px solid var(--color-estate-green);
+  background: var(--color-estate-green);
+  color: var(--color-cream);
+}
