@@ -1,0 +1,20 @@
+.section {
+  padding: clamp(50px, 7vw, 90px) var(--page-gutter);
+  text-align: center;
+  border-bottom: 1px solid var(--color-divider);
+  background: var(--color-surface);
+}
+
+.line {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(32px, 4.4vw, 60px);
+  line-height: 1.02;
+  color: var(--color-estate-green);
+  max-width: 20ch;
+  margin: 0 auto;
+}
+
+.button {
+  margin-top: 28px;
+}

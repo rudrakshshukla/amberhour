@@ -1,0 +1,17 @@
+.section {
+  background: var(--color-estate-green);
+  padding: clamp(50px, 7vw, 90px) var(--page-gutter);
+  text-align: center;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-style: italic;
+  font-size: clamp(28px, 3.8vw, 50px);
+  line-height: 1.18;
+  color: var(--color-cream);
+  max-width: 24ch;
+  margin: 0 auto;
+}
