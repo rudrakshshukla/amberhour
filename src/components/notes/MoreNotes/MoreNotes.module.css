@@ -1,0 +1,42 @@
+.section {
+  padding: clamp(40px, 5vw, 72px) var(--page-gutter);
+  border-top: 1px solid var(--color-divider);
+}
+
+.kicker {
+  margin-bottom: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 22px;
+}
+
+.card {
+  display: block;
+  border: 1px solid var(--color-divider);
+  padding: 24px;
+  color: inherit;
+  transition: background-color 200ms ease-out;
+}
+
+.card:hover {
+  background-color: color-mix(in srgb, var(--color-estate-green) 4%, var(--color-page));
+}
+
+.meta {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--color-estate-green);
+  margin-top: 10px;
+}

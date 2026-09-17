@@ -1,5 +1,4 @@
-import Link from "next/link";
-import styles from "./ToolBreadcrumb.module.css";
+import { Breadcrumb } from "@/components/ui/Breadcrumb/Breadcrumb";
 
 /**
  * "Library · Tool 01 · Think" strip above the hero (HANDOFF-SPEC.md →
@@ -13,16 +12,12 @@ export function ToolBreadcrumb({
   pillar: "Think" | "Decide" | "Build";
 }) {
   return (
-    <div className={styles.strip}>
-      <Link href="/library" className={styles.crumb}>
-        Library
-      </Link>
-      <span className={styles.separator}>·</span>
-      <span className={styles.crumb}>{`Tool ${String(number).padStart(2, "0")}`}</span>
-      <span className={styles.separator}>·</span>
-      <Link href={`/${pillar.toLowerCase()}`} className={styles.crumb}>
-        {pillar}
-      </Link>
-    </div>
+    <Breadcrumb
+      items={[
+        { label: "Library", href: "/library" },
+        { label: `Tool ${String(number).padStart(2, "0")}` },
+        { label: pillar, href: `/${pillar.toLowerCase()}` },
+      ]}
+    />
   );
 }

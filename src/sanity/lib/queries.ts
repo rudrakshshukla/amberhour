@@ -61,11 +61,17 @@ export function getHomeNotes() {
   });
 }
 
-/** "Aug 2026" — the date stamp format used throughout the Notes UI. */
-export function formatNoteDate(publishedAt: string) {
-  return new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric" }).format(
-    new Date(publishedAt)
-  );
+/**
+ * "Aug 2026" — the date stamp format used on the Notes index and
+ * breadcrumbs. The Note page's own head kicker spells the month out in
+ * full ("Essay · August 2026", Note.dc.html) — pass `{ long: true }` for
+ * that one spot rather than duplicating the formatter.
+ */
+export function formatNoteDate(publishedAt: string, options?: { long?: boolean }) {
+  return new Intl.DateTimeFormat("en-GB", {
+    month: options?.long ? "long" : "short",
+    year: "numeric",
+  }).format(new Date(publishedAt));
 }
 
 // ---------------------------------------------------------------------------
@@ -396,4 +402,103 @@ export async function getNotesIndex(): Promise<NotesIndexNote[]> {
     leadImageUrl: urlForImage(leadImage)?.width(1000).height(625).fit("crop").url(),
     leadImageAlt: leadImage?.alt,
   }));
+}
+
+// ---------------------------------------------------------------------------
+// Note detail — /notes/[slug].
+// ---------------------------------------------------------------------------
+
+export interface NoteRelatedTool {
+  slug: string;
+  title: string;
+  summary: string;
+}
+
+export interface NoteDetail {
+  slug: string;
+  kind: "Essay" | "Observation" | "Question";
+  readingMinutes: number;
+  publishedAt: string;
+  title: string;
+  standfirst: string;
+  leadImageUrl?: string;
+  leadImageAlt?: string;
+  body: PortableTextBlock[];
+  relatedTool: NoteRelatedTool | null;
+}
+
+interface RawNoteDetail {
+  slug: string;
+  kind: "Essay" | "Observation" | "Question";
+  readingMinutes: number;
+  publishedAt: string;
+  title: string;
+  standfirst: string;
+  leadImage?: SanityImageSource & { alt?: string };
+  body: PortableTextBlock[];
+  relatedTool: NoteRelatedTool | null;
+}
+
+const noteBySlugQuery = groq`
+  *[_type == "note" && slug.current == $slug][0]{
+    "slug": slug.current,
+    kind,
+    readingMinutes,
+    publishedAt,
+    title,
+    standfirst,
+    leadImage,
+    body,
+    "relatedTool": relatedTool->{
+      "slug": slug.current,
+      title,
+      summary
+    }
+  }
+`;
+
+export async function getNoteBySlug(slug: string): Promise<NoteDetail | null> {
+  const note = await sanityFetch<RawNoteDetail | null>({
+    query: noteBySlugQuery,
+    params: { slug },
+    tags: [SANITY_TAGS.note, SANITY_TAGS.tool],
+    fallback: null,
+  });
+
+  if (!note) return null;
+
+  const { leadImage, ...rest } = note;
+
+  return {
+    ...rest,
+    leadImageUrl: urlForImage(leadImage)?.width(1400).height(788).fit("crop").url(),
+    leadImageAlt: leadImage?.alt,
+  };
+}
+
+export interface MoreNote {
+  slug: string;
+  kind: "Essay" | "Observation" | "Question";
+  readingMinutes: number;
+  title: string;
+}
+
+const moreNotesQuery = groq`
+  *[_type == "note" && defined(slug.current) && slug.current != $slug]
+  | order(publishedAt desc) [0...3] {
+    "slug": slug.current,
+    kind,
+    readingMinutes,
+    title
+  }
+`;
+
+/** "More notes" — three most recent others (Note.dc.html: "Three hairline-bordered cards"). */
+export function getMoreNotes(excludeSlug: string) {
+  return sanityFetch<MoreNote[]>({
+    query: moreNotesQuery,
+    params: { slug: excludeSlug },
+    tags: [SANITY_TAGS.note],
+    fallback: [],
+  });
 }
