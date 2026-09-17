@@ -1,0 +1,31 @@
+.section {
+  padding: clamp(80px, 12vw, 160px) var(--page-gutter);
+  text-align: center;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(32px, 4.6vw, 62px);
+  line-height: 1.1;
+  color: var(--color-estate-green);
+  max-width: 18ch;
+  margin: 18px auto 0;
+}
+
+.actions {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
