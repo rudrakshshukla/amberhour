@@ -1,9 +1,9 @@
 import { Kicker } from "@/components/ui/Kicker/Kicker";
 import { CmsImage } from "@/components/ui/CmsImage/CmsImage";
+import { CloseBand } from "@/components/ui/CloseBand/CloseBand";
 import { PillarBlock } from "@/components/home/PillarBlock/PillarBlock";
 import { PillarList } from "@/components/pillar/PillarList/PillarList";
 import { PullQuote } from "@/components/pillar/PullQuote/PullQuote";
-import { PillarClose } from "@/components/pillar/PillarClose/PillarClose";
 import { PILLARS, crossLinksFor, type PillarId } from "@/lib/pillar-content";
 import styles from "./PillarPage.module.css";
 
@@ -62,7 +62,7 @@ export function PillarPage({ pillar }: { pillar: PillarId }) {
         />
       ))}
 
-      <PillarClose />
+      <CloseBand line="Tools for all of this." buttonLabel="Explore the library" buttonHref="/library" />
     </>
   );
 }

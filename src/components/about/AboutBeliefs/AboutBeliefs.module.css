@@ -1,0 +1,22 @@
+.section {
+  padding: clamp(46px, 6vw, 90px) var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.kicker {
+  margin-bottom: 30px;
+}
+
+.rows {
+  border-top: 1px solid var(--color-divider);
+}
+
+.row {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(26px, 3.4vw, 44px);
+  line-height: 1.15;
+  color: var(--color-estate-green);
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
