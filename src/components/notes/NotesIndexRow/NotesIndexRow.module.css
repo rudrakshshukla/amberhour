@@ -1,0 +1,35 @@
+.row {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.28fr) minmax(min(100%, 260px), 1fr) minmax(90px, 0.16fr);
+  gap: clamp(16px, 2vw, 32px);
+  align-items: baseline;
+  padding: 26px var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+  color: inherit;
+  transition: background-color 200ms ease-out;
+}
+
+.row:hover {
+  background-color: color-mix(in srgb, var(--color-estate-green) 4%, var(--color-page));
+}
+
+.meta {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.15;
+  color: var(--color-estate-green);
+}
+
+.date {
+  font-size: 13px;
+  color: var(--green-500);
+  text-align: right;
+}

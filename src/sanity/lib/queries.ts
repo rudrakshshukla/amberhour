@@ -342,3 +342,58 @@ export async function getRelatedTool(
     coverImageAlt: coverImage?.alt,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Notes — the Notes index (every note, featured note + the rest).
+// ---------------------------------------------------------------------------
+
+export interface NotesIndexNote {
+  slug: string;
+  kind: "Essay" | "Observation" | "Question";
+  readingMinutes: number;
+  publishedAt: string;
+  title: string;
+  standfirst: string;
+  leadImageUrl?: string;
+  leadImageAlt?: string;
+  featured: boolean;
+}
+
+interface RawNotesIndexNote {
+  slug: string;
+  kind: "Essay" | "Observation" | "Question";
+  readingMinutes: number;
+  publishedAt: string;
+  title: string;
+  standfirst: string;
+  leadImage?: SanityImageSource & { alt?: string };
+  featured: boolean;
+}
+
+const notesIndexQuery = groq`
+  *[_type == "note" && defined(slug.current)] | order(featured desc, publishedAt desc) {
+    "slug": slug.current,
+    kind,
+    readingMinutes,
+    publishedAt,
+    title,
+    standfirst,
+    leadImage,
+    "featured": featured == true
+  }
+`;
+
+/** Every note — the Notes index (README.md → "7. Notes index — /notes"). */
+export async function getNotesIndex(): Promise<NotesIndexNote[]> {
+  const notes = await sanityFetch<RawNotesIndexNote[]>({
+    query: notesIndexQuery,
+    tags: [SANITY_TAGS.note],
+    fallback: [],
+  });
+
+  return notes.map(({ leadImage, ...note }) => ({
+    ...note,
+    leadImageUrl: urlForImage(leadImage)?.width(1000).height(625).fit("crop").url(),
+    leadImageAlt: leadImage?.alt,
+  }));
+}
