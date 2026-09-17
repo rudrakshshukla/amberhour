@@ -1,0 +1,35 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.panel {
+  padding: clamp(56px, 7vw, 110px) var(--page-gutter);
+  display: grid;
+  align-content: center;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(42px, 6vw, 88px);
+  line-height: 0.98;
+  color: var(--color-estate-green);
+  margin-top: 20px;
+  max-width: 20ch;
+}
+
+.body {
+  margin: 26px 0 0;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.7;
+  color: var(--color-estate-green);
+  max-width: 42ch;
+  text-wrap: pretty;
+}
+
+.cta {
+  margin-top: 32px;
+  justify-self: start;
+}
