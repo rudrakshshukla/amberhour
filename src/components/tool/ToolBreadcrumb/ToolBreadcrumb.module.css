@@ -1,0 +1,23 @@
+.strip {
+  padding: 14px var(--page-gutter);
+  border-bottom: 1px solid var(--color-divider);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-500);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.crumb {
+  color: inherit;
+}
+
+a.crumb:hover {
+  color: var(--color-estate-green);
+}
+
+.separator {
+  color: var(--color-sage);
+}

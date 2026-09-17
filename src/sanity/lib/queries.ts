@@ -1,5 +1,6 @@
 import { groq } from "next-sanity";
 import type { SanityImageSource } from "@sanity/image-url";
+import type { PortableTextBlock } from "@sanity/types";
 import { sanityFetch } from "./fetch";
 import { urlForImage } from "./image";
 import { SANITY_TAGS } from "./tags";
@@ -199,4 +200,145 @@ export async function getLibraryTools(): Promise<LibraryTool[]> {
     coverImageUrl: urlForImage(coverImage)?.width(680).height(510).fit("crop").url(),
     coverImageAlt: coverImage?.alt,
   }));
+}
+
+// ---------------------------------------------------------------------------
+// Tool detail — /library/[slug].
+// ---------------------------------------------------------------------------
+
+export interface ToolPreviewImage {
+  url?: string;
+  alt?: string;
+}
+
+export interface ToolDetail {
+  slug: string;
+  number: number;
+  pillar: "Think" | "Decide" | "Build";
+  title: string;
+  summary: string;
+  description: PortableTextBlock[];
+  contents: string[];
+  coverImageUrl?: string;
+  coverImageAlt?: string;
+  previewImages: ToolPreviewImage[];
+  priceGBP?: number;
+  notionUrl?: string;
+  status: "Available" | "In progress";
+}
+
+interface RawToolDetail {
+  slug: string;
+  number: number;
+  pillar: "Think" | "Decide" | "Build";
+  title: string;
+  summary: string;
+  description: PortableTextBlock[];
+  contents: string[];
+  coverImage?: SanityImageSource & { alt?: string };
+  previewImages?: (SanityImageSource & { alt?: string })[];
+  priceGBP?: number;
+  notionUrl?: string;
+  status: "Available" | "In progress";
+}
+
+const toolBySlugQuery = groq`
+  *[_type == "tool" && slug.current == $slug][0]{
+    "slug": slug.current,
+    number,
+    pillar,
+    title,
+    summary,
+    description,
+    contents,
+    coverImage,
+    previewImages,
+    "priceGBP": prices[currency->code == "GBP"][0].amount,
+    notionUrl,
+    status
+  }
+`;
+
+/** One tool, any status — the Tool page itself decides what to do with "In progress". */
+export async function getToolBySlug(slug: string): Promise<ToolDetail | null> {
+  const tool = await sanityFetch<RawToolDetail | null>({
+    query: toolBySlugQuery,
+    params: { slug },
+    tags: [SANITY_TAGS.tool, SANITY_TAGS.currency],
+    fallback: null,
+  });
+
+  if (!tool) return null;
+
+  const { coverImage, previewImages, ...rest } = tool;
+
+  return {
+    ...rest,
+    coverImageUrl: urlForImage(coverImage)?.width(960).height(720).fit("crop").url(),
+    coverImageAlt: coverImage?.alt,
+    previewImages: (previewImages ?? []).map((image) => ({
+      url: urlForImage(image)?.width(720).height(960).fit("crop").url(),
+      alt: image.alt,
+    })),
+  };
+}
+
+export interface RelatedTool {
+  slug: string;
+  number: number;
+  pillar: "Think" | "Decide" | "Build";
+  title: string;
+  coverImageUrl?: string;
+  coverImageAlt?: string;
+}
+
+interface RawRelatedTool {
+  slug: string;
+  number: number;
+  pillar: "Think" | "Decide" | "Build";
+  title: string;
+  coverImage?: SanityImageSource & { alt?: string };
+}
+
+const relatedToolQuery = groq`
+  *[
+    _type == "tool" &&
+    status == "Available" &&
+    pillar == $pillar &&
+    slug.current != $slug &&
+    defined(slug.current)
+  ] | order(number asc) [0] {
+    "slug": slug.current,
+    number,
+    pillar,
+    title,
+    coverImage
+  }
+`;
+
+/**
+ * "Also in the library" — one other Available tool in the same pillar
+ * (Tool.dc.html: "Two cards, one real, one dashed placeholder"). Returns
+ * null rather than a fabricated card when there isn't one yet.
+ */
+export async function getRelatedTool(
+  pillar: "Think" | "Decide" | "Build",
+  excludeSlug: string
+): Promise<RelatedTool | null> {
+  const related = await sanityFetch<RawRelatedTool | null>({
+    query: relatedToolQuery,
+    params: { pillar, slug: excludeSlug },
+    tags: [SANITY_TAGS.tool],
+    fallback: null,
+  });
+
+  if (!related) return null;
+
+  const { coverImage, ...rest } = related;
+
+  return {
+    ...rest,
+    coverImageUrl: urlForImage(coverImage)?.width(560).height(420).fit("crop").url(),
+    coverImageAlt: coverImage?.alt,
+  };
 }
