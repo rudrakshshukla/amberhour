@@ -1,0 +1,33 @@
+.section {
+  padding: clamp(80px, 12vw, 160px) var(--page-gutter);
+  text-align: center;
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(32px, 4.6vw, 62px);
+  line-height: 1.1;
+  color: var(--color-estate-green);
+  max-width: 20ch;
+  margin: 18px auto 0;
+}
+
+.body {
+  margin: 20px auto 0;
+  max-width: 44ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-estate-green);
+}
+
+.action {
+  margin-top: 32px;
+}
