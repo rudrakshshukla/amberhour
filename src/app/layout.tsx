@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { editorial, instrumentSans } from "./fonts";
+import { CartProvider } from "@/lib/cart/CartProvider";
+import { BagPanel } from "@/components/cart/BagPanel/BagPanel";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,14 +15,26 @@ export const metadata: Metadata = {
 };
 
 /**
- * Root layout: fonts and global tokens only. Chrome (header, status line,
- * footer) lives in `(site)/layout.tsx` so a future route outside that
- * group — `/studio`, the Sanity Studio — can render without it.
+ * Root layout: fonts, global tokens, and the bag's client-side state.
+ * Chrome (header, status line, footer) lives in `(site)/layout.tsx` so
+ * a future route outside that group — `/studio`, the Sanity Studio —
+ * can render without it.
+ *
+ * CartProvider lives here rather than in `(site)/layout.tsx` so the bag
+ * survives navigating to and from Home (`app/page.tsx`), which renders
+ * outside that route group with its own chrome — putting the provider
+ * in `(site)` would remount it (and reset its in-memory state, though
+ * not the underlying localStorage) every time.
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${editorial.variable} ${instrumentSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          {children}
+          <BagPanel />
+        </CartProvider>
+      </body>
     </html>
   );
 }

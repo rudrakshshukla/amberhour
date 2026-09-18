@@ -1,5 +1,8 @@
+"use client";
+
 import { CmsImage } from "@/components/ui/CmsImage/CmsImage";
 import { Button } from "@/components/ui/Button/Button";
+import { useCart } from "@/lib/cart/CartProvider";
 import type { ToolDetail } from "@/sanity/lib/queries";
 import styles from "./ToolHero.module.css";
 
@@ -7,13 +10,14 @@ import styles from "./ToolHero.module.css";
  * The Tool page hero: cover image left, info panel right (HANDOFF-SPEC.md
  * → "4. Tool page", "Hero"; Tool.dc.html lines 50–66).
  *
- * "Add to bag" and "Buy now" render as inert buttons — the bag and
- * checkout flow are build stage 5 (payments), not built yet, and the
- * spec's own note on the Bag section says the real bag is a slide-over
- * panel, not an inline one. The "Secure checkout by…" line is left
- * static naming Stripe; the spec calls for it to switch to Razorpay/UPI
- * for Indian buyers once gateway routing exists (stage 5), which isn't
- * something to fake here.
+ * "Add to bag" adds the line and opens the bag panel; "Buy now" adds the
+ * line and checks out immediately through the same `useCart().checkout()`
+ * the bag panel's own button calls (see CartProvider.tsx for how the
+ * just-added line reaches checkout() without a stale-state race). The
+ * "Secure checkout by…" line is left static naming Stripe; the spec
+ * calls for it to switch to Razorpay/UPI for Indian buyers once gateway
+ * routing is wired into this page too (today only lib/checkout's
+ * server-side routing knows about that).
  *
  * An "In progress" tool isn't linked from the Library index (LibraryRow
  * shows it greyed with "Soon", no link) — but this route still resolves
@@ -22,6 +26,26 @@ import styles from "./ToolHero.module.css";
  */
 export function ToolHero({ tool }: { tool: ToolDetail }) {
   const available = tool.status === "Available";
+  const { add, open, checkout, isCheckingOut } = useCart();
+
+  const cartLine = {
+    kind: "tool" as const,
+    slug: tool.slug,
+    title: tool.title,
+    priceGBP: tool.priceGBP,
+    coverImageUrl: tool.coverImageUrl,
+    coverImageAlt: tool.coverImageAlt,
+  };
+
+  function handleAddToBag() {
+    add(cartLine);
+    open();
+  }
+
+  function handleBuyNow() {
+    add(cartLine);
+    void checkout();
+  }
 
   return (
     <section className={styles.hero}>
@@ -49,8 +73,10 @@ export function ToolHero({ tool }: { tool: ToolDetail }) {
               <span className={styles.instant}>Instant download</span>
             </div>
             <div className={styles.actions}>
-              <Button type="button">Add to bag</Button>
-              <Button type="button" variant="outline">
+              <Button type="button" onClick={handleAddToBag}>
+                Add to bag
+              </Button>
+              <Button type="button" variant="outline" onClick={handleBuyNow} disabled={isCheckingOut}>
                 Buy now
               </Button>
             </div>

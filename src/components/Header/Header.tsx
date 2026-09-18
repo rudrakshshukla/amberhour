@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PILLAR_LINKS, WORK_WITH_ME_LINK } from "@/lib/nav";
+import { useCart } from "@/lib/cart/CartProvider";
 import styles from "./Header.module.css";
 
 export interface HeaderProps {
@@ -15,17 +16,17 @@ export interface HeaderProps {
    * other page.
    */
   variant?: "default" | "onHero";
-  /**
-   * Bag line count. The spec shows this only on Library and Tool pages,
-   * once the bag exists (build stage 5, Stripe/Razorpay). Omit to hide
-   * it entirely, which is every page for now.
-   */
-  bagCount?: number;
 }
 
-export function Header({ variant = "default", bagCount }: HeaderProps) {
+/**
+ * The bag button reads live cart state via `useCart()` — no longer a
+ * prop the caller has to compute. It only renders once there's
+ * something in the bag: the mockups never show "Bag (0)", and it keeps
+ * the header clean until the bag is actually in use.
+ */
+export function Header({ variant = "default" }: HeaderProps) {
   const pathname = usePathname();
-  const showBag = typeof bagCount === "number";
+  const { count, open } = useCart();
   const isOnHero = variant === "onHero";
 
   return (
@@ -59,9 +60,9 @@ export function Header({ variant = "default", bagCount }: HeaderProps) {
       </nav>
 
       <div className={styles.actions}>
-        {showBag && (
-          <button type="button" className={`${styles.bag} tabular-nums`}>
-            Bag ({bagCount})
+        {count > 0 && (
+          <button type="button" className={`${styles.bag} tabular-nums`} onClick={open}>
+            Bag ({count})
           </button>
         )}
         <Link href={WORK_WITH_ME_LINK.href} className={styles.cta}>
